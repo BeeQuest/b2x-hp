@@ -1,5 +1,5 @@
 /* =========================================================
-   CloudNest LP - script.js
+   B2X Corporate Site - script.js
    ========================================================= */
 (() => {
   "use strict";
@@ -42,6 +42,84 @@
     initPagetop();
     initFadeUp();
     initSmoothAnchors();
+    initContactForm();
+  };
+
+  /* ---------- Contact form validation ---------- */
+  const initContactForm = () => {
+    const form = $("#contact-form");
+    if (!form) return;
+
+    const setError = (field, message) => {
+      field.classList.add("error");
+      field.setAttribute("aria-invalid", "true");
+      const msgEl = field.parentElement.querySelector(".form-error-msg");
+      if (msgEl) {
+        msgEl.textContent = message;
+        msgEl.classList.add("show");
+      }
+    };
+    const clearError = (field) => {
+      field.classList.remove("error");
+      field.removeAttribute("aria-invalid");
+      const msgEl = field.parentElement.querySelector(".form-error-msg");
+      if (msgEl) {
+        msgEl.textContent = "";
+        msgEl.classList.remove("show");
+      }
+    };
+
+    $$("input, select, textarea", form).forEach(el => {
+      el.addEventListener("input", () => clearError(el));
+      el.addEventListener("change", () => clearError(el));
+    });
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      let firstError = null;
+      let valid = true;
+
+      const nameField = $("#f-name", form);
+      if (nameField && !nameField.value.trim()) {
+        setError(nameField, "お名前を入力してください。");
+        valid = false;
+        firstError = firstError || nameField;
+      }
+      const emailField = $("#f-email", form);
+      if (emailField) {
+        const v = emailField.value.trim();
+        const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!v) {
+          setError(emailField, "メールアドレスを入力してください。");
+          valid = false;
+          firstError = firstError || emailField;
+        } else if (!emailRe.test(v)) {
+          setError(emailField, "メールアドレスの形式が正しくありません。");
+          valid = false;
+          firstError = firstError || emailField;
+        }
+      }
+      const msgField = $("#f-message", form);
+      if (msgField && !msgField.value.trim()) {
+        setError(msgField, "お問い合わせ内容を入力してください。");
+        valid = false;
+        firstError = firstError || msgField;
+      }
+      const agreeField = $("#f-agree", form);
+      if (agreeField && !agreeField.checked) {
+        setError(agreeField, "プライバシーポリシーへの同意が必要です。");
+        valid = false;
+        firstError = firstError || agreeField;
+      }
+
+      if (!valid) {
+        if (firstError && typeof firstError.focus === "function") firstError.focus();
+        return;
+      }
+
+      alert("お問い合わせを受け付けました。担当者よりご連絡いたします。");
+      form.reset();
+    });
   };
 
   /* ---------- Header scroll state ---------- */
@@ -136,20 +214,20 @@
 
   /* ---------- Pricing tabs (ARIA tab pattern) ---------- */
   const pricingData = {
-    shared: [
-      { name: "Starter",    desc: "個人サイト・ブログ向け",          price: "440",    features: ["ディスク 100GB SSD", "転送量 無制限", "マルチドメイン 10個", "無料SSL", "自動バックアップ"], recommended: false },
-      { name: "Business",   desc: "中小企業のコーポレートサイトに",   price: "1,320",  features: ["ディスク 300GB SSD", "転送量 無制限", "マルチドメイン 無制限", "無料SSL + WAF", "優先サポート", "WordPress簡単インストール"], recommended: true },
-      { name: "Enterprise", desc: "大規模ECサイト・メディア向け",     price: "3,960",  features: ["ディスク 1TB SSD", "転送量 無制限", "マルチドメイン 無制限", "高度WAF + DDoS対策", "専任カスタマーサクセス", "SLA 99.99% 保証"], recommended: false }
+    dx: [
+      { name: "Assessment",    desc: "現状診断・ロードマップ策定",           features: ["教育・研修の現状アセスメント", "DX推進ロードマップ策定", "KPI・効果測定設計", "経営層・現場向け報告会", "期間目安: 1〜2ヶ月"], recommended: false },
+      { name: "Transformation", desc: "研修設計 × BeeQuest実装まで伴走",     features: ["カリキュラム・教材設計", "BeeQuest上での学習環境構築", "既存システムとの連携開発", "運用定着・効果測定", "専任コンサルタントが伴走", "期間目安: 4〜9ヶ月"], recommended: true },
+      { name: "Enterprise AX", desc: "会計業務そのものの再設計",             features: ["AX戦略立案・業務棚卸し", "会計システム / API連携設計", "経理チームの育成・リスキリング", "業務効率化ツール開発", "全社展開・PMOサポート", "期間目安: 6ヶ月〜"], recommended: false }
     ],
-    vps: [
-      { name: "VPS 1GB",  desc: "個人の開発用途に",      price: "880",    features: ["メモリ 1GB", "SSD 50GB", "CPU 2コア", "root権限", "テンプレート10種"], recommended: false },
-      { name: "VPS 4GB",  desc: "小規模サービスに最適",   price: "3,520",  features: ["メモリ 4GB", "SSD 200GB", "CPU 4コア", "root権限", "自動バックアップ", "スナップショット"], recommended: true },
-      { name: "VPS 16GB", desc: "本格運用の基盤に",      price: "14,300", features: ["メモリ 16GB", "SSD 800GB", "CPU 8コア", "root権限", "自動バックアップ", "プライベートNW"], recommended: false }
+    beequest: [
+      { name: "BeeQuest Start",    desc: "小規模チームでまず試す",             features: ["標準コンテンツ利用", "最大50アカウント", "学習進捗ダッシュボード", "メールサポート", "導入時オンボーディング"], recommended: false },
+      { name: "BeeQuest Business", desc: "全社展開・独自コンテンツ運用",        features: ["無制限アカウント", "オリジナル教材アップロード", "部署・役職別の学習設計", "習熟度分析レポート", "SSO / ID連携", "専任カスタマーサクセス"], recommended: true },
+      { name: "BeeQuest Enterprise", desc: "既存システムと深く連携",            features: ["人事・会計システムとのAPI連携", "SCIMユーザープロビジョニング", "カスタム開発・プラグイン", "監査ログ・セキュリティ強化", "SLA・専用サポート体制"], recommended: false }
     ],
-    dedicated: [
-      { name: "Standard", desc: "中規模サイトに",            price: "15,800", features: ["Xeon E-2336", "メモリ 32GB", "SSD 1TB", "帯域 100Mbps", "RAID1構成"], recommended: false },
-      { name: "Advance",  desc: "高負荷サイトに",            price: "29,800", features: ["Xeon Silver 4310", "メモリ 64GB", "SSD 2TB x2", "帯域 1Gbps", "RAID1 + 遠隔バックアップ"], recommended: true },
-      { name: "Premium",  desc: "基幹業務・大規模運用に",    price: "58,000", features: ["Xeon Gold 6330", "メモリ 128GB", "NVMe 4TB x2", "帯域 1Gbps 専有", "24時間保守"], recommended: false }
+    accounting: [
+      { name: "Fundamentals",  desc: "簿記・財務会計の基礎を体系化",           features: ["簿記3級〜2級相当カリキュラム", "実務者監修の動画教材", "章末テスト・添削", "BeeQuest上で受講管理", "期間目安: 2〜3ヶ月"], recommended: false },
+      { name: "Practitioner",  desc: "経理実務者のリスキリング",                features: ["管理会計 / 連結 / IFRS対応", "ケーススタディ・ロールプレイ", "現場課題ベースの演習", "講師によるライブ質疑応答", "習熟度別の個別学習設計", "期間目安: 3〜6ヶ月"], recommended: true },
+      { name: "Leadership",    desc: "経理マネジャー・CFO候補育成",             features: ["財務戦略・投資意思決定", "AX推進リーダーシップ研修", "経営シミュレーション", "社外講師・実務家ゲスト講義", "個別コーチング付き", "期間目安: 6ヶ月〜"], recommended: false }
     ]
   };
 
@@ -193,11 +271,11 @@
             ${p.recommended ? '<span class="ribbon">おすすめ</span>' : ""}
             <h3>${escapeHTML(p.name)}</h3>
             <p class="price-desc">${escapeHTML(p.desc)}</p>
-            <div class="price"><span>月額</span><strong>${escapeHTML(p.price)}</strong><span>円</span></div>
+            <div class="price contact"><strong>お問い合わせ</strong></div>
             <ul class="price-features">
               ${p.features.map(f => `<li><i class="fa-solid fa-check" aria-hidden="true"></i> ${escapeHTML(f)}</li>`).join("")}
             </ul>
-            <a href="#" class="btn ${btnClass} btn-block">このプランで申し込む</a>
+            <a href="#" class="btn ${btnClass} btn-block">このパターンで相談する</a>
           </div>
         `;
       }).join("");
@@ -237,8 +315,8 @@
     // If initial active tab exists, ensure panel matches
     const initial = tabs.find(t => t.classList.contains("active")) || tabs[0];
     panel.setAttribute("aria-labelledby", initial.id);
-    // Only re-render if initial key differs from static markup (shared is already in DOM)
-    if (initial.dataset.tab && initial.dataset.tab !== "shared") {
+    // Only re-render if initial key differs from static markup (dx is already in DOM)
+    if (initial.dataset.tab && initial.dataset.tab !== "dx") {
       render(initial.dataset.tab);
     }
   };
