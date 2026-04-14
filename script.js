@@ -215,19 +215,19 @@
   /* ---------- Pricing tabs (ARIA tab pattern) ---------- */
   const pricingData = {
     dx: [
-      { name: "Assessment",    desc: "現状診断・ロードマップ策定",           features: ["教育・研修の現状アセスメント", "DX推進ロードマップ策定", "KPI・効果測定設計", "経営層・現場向け報告会", "期間目安: 1〜2ヶ月"], recommended: false },
-      { name: "Transformation", desc: "研修設計 × BeeQuest実装まで伴走",     features: ["カリキュラム・教材設計", "BeeQuest上での学習環境構築", "既存システムとの連携開発", "運用定着・効果測定", "専任コンサルタントが伴走", "期間目安: 4〜9ヶ月"], recommended: true },
-      { name: "Enterprise AX", desc: "会計業務そのものの再設計",             features: ["AX戦略立案・業務棚卸し", "会計システム / API連携設計", "経理チームの育成・リスキリング", "業務効率化ツール開発", "全社展開・PMOサポート", "期間目安: 6ヶ月〜"], recommended: false }
+      { name: "現状診断プラン",   desc: "現状診断・ロードマップ策定",           features: ["教育・研修の現状アセスメント", "DX推進ロードマップ策定", "KPI・効果測定設計", "経営層・現場向け報告会", "期間目安: 1〜2ヶ月"], recommended: false },
+      { name: "伴走変革プラン",   desc: "研修設計 × BeeQuest実装まで伴走",     features: ["カリキュラム・教材設計", "BeeQuest上での学習環境構築", "既存システムとの連携開発", "運用定着・効果測定", "専任コンサルタントが伴走", "期間目安: 4〜9ヶ月"], recommended: true },
+      { name: "全社AXプラン",     desc: "会計業務そのものの再設計",             features: ["AX戦略立案・業務棚卸し", "会計システム / API連携設計", "経理チームの育成・リスキリング", "業務効率化ツール開発", "全社展開・PMOサポート", "期間目安: 6ヶ月〜"], recommended: false }
     ],
     beequest: [
-      { name: "BeeQuest Start",    desc: "小規模チームでまず試す",             features: ["標準コンテンツ利用", "最大50アカウント", "学習進捗ダッシュボード", "メールサポート", "導入時オンボーディング"], recommended: false },
-      { name: "BeeQuest Business", desc: "全社展開・独自コンテンツ運用",        features: ["無制限アカウント", "オリジナル教材アップロード", "部署・役職別の学習設計", "習熟度分析レポート", "SSO / ID連携", "専任カスタマーサクセス"], recommended: true },
-      { name: "BeeQuest Enterprise", desc: "既存システムと深く連携",            features: ["人事・会計システムとのAPI連携", "SCIMユーザープロビジョニング", "カスタム開発・プラグイン", "監査ログ・セキュリティ強化", "SLA・専用サポート体制"], recommended: false }
+      { name: "スタータープラン",   desc: "小規模チームでまず試す",             features: ["標準コンテンツ利用", "最大50アカウント", "学習進捗ダッシュボード", "メールサポート", "導入時オンボーディング"], recommended: false },
+      { name: "ビジネスプラン",     desc: "全社展開・独自コンテンツ運用",        features: ["無制限アカウント", "オリジナル教材アップロード", "部署・役職別の学習設計", "習熟度分析レポート", "SSO / ID連携", "専任カスタマーサクセス"], recommended: true },
+      { name: "エンタープライズプラン", desc: "既存システムと深く連携",        features: ["人事・会計システムとのAPI連携", "SCIMユーザープロビジョニング", "カスタム開発・プラグイン", "監査ログ・セキュリティ強化", "SLA・専用サポート体制"], recommended: false }
     ],
     accounting: [
-      { name: "Fundamentals",  desc: "簿記・財務会計の基礎を体系化",           features: ["簿記3級〜2級相当カリキュラム", "実務者監修の動画教材", "章末テスト・添削", "BeeQuest上で受講管理", "期間目安: 2〜3ヶ月"], recommended: false },
-      { name: "Practitioner",  desc: "経理実務者のリスキリング",                features: ["管理会計 / 連結 / IFRS対応", "ケーススタディ・ロールプレイ", "現場課題ベースの演習", "講師によるライブ質疑応答", "習熟度別の個別学習設計", "期間目安: 3〜6ヶ月"], recommended: true },
-      { name: "Leadership",    desc: "経理マネジャー・CFO候補育成",             features: ["財務戦略・投資意思決定", "AX推進リーダーシップ研修", "経営シミュレーション", "社外講師・実務家ゲスト講義", "個別コーチング付き", "期間目安: 6ヶ月〜"], recommended: false }
+      { name: "基礎コース",      desc: "簿記・財務会計の基礎を体系化",           features: ["簿記3級〜2級相当カリキュラム", "実務者監修の動画教材", "章末テスト・添削", "BeeQuest上で受講管理", "期間目安: 2〜3ヶ月"], recommended: false },
+      { name: "実務者コース",    desc: "経理実務者のリスキリング",                features: ["管理会計 / 連結 / IFRS対応", "ケーススタディ・ロールプレイ", "現場課題ベースの演習", "講師によるライブ質疑応答", "習熟度別の個別学習設計", "期間目安: 3〜6ヶ月"], recommended: true },
+      { name: "リーダーコース",  desc: "経理マネジャー・CFO候補育成",             features: ["財務戦略・投資意思決定", "AX推進リーダーシップ研修", "経営シミュレーション", "社外講師・実務家ゲスト講義", "個別コーチング付き", "期間目安: 6ヶ月〜"], recommended: false }
     ]
   };
 

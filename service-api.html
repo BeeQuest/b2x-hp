@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>API・プラグイン開発 | 株式会社B2X</title>
+<meta name="description" content="freee / マネーフォワード / SmartHR等の会計・人事SaaSと、BeeQuestや独自システムをシームレスに接続。API連携・Webhook・プラグイン開発をワンストップで提供します。">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#1a73e8">
+<link rel="canonical" href="https://b2x.co.jp/service-api.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="API・プラグイン開発 | 株式会社B2X">
+<meta property="og:description" content="会計・人事SaaSとのAPI連携・プラグイン開発を一気通貫で。">
+<meta property="og:url" content="https://b2x.co.jp/service-api.html">
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"API・プラグイン開発","provider":{"@type":"Organization","name":"株式会社B2X","url":"https://b2x.co.jp/"},"serviceType":"API Integration Development","description":"会計・人事SaaSと既存システムを繋ぐAPI連携・Webhook・プラグイン開発。","areaServed":"JP"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ホーム","item":"https://b2x.co.jp/"},{"@type":"ListItem","position":2,"name":"サービス","item":"https://b2x.co.jp/index.html#services"},{"@type":"ListItem","position":3,"name":"API・プラグイン開発","item":"https://b2x.co.jp/service-api.html"}]}</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a href="#main" class="skip-link">本文へスキップ</a>
+
+<div class="topbar" role="complementary" aria-label="ユーティリティリンク">
+  <div class="container topbar-inner">
+    <div class="topbar-left">
+      <a href="faq.html"><i class="fa-regular fa-circle-question"></i> よくある質問</a>
+      <a href="contact.html"><i class="fa-regular fa-file-lines"></i> 資料ダウンロード</a>
+      <a href="contact.html"><i class="fa-regular fa-envelope"></i> お問い合わせ</a>
+    </div>
+    <div class="topbar-right">
+      <a href="#"><i class="fa-solid fa-right-to-bracket"></i> BeeQuestログイン</a>
+      <a href="contact.html" class="topbar-btn">資料請求</a>
+    </div>
+  </div>
+</div>
+
+<header class="header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo"><i class="fa-solid fa-cube"></i><span>B2X</span></a>
+    <nav class="gnav" id="gnav" aria-label="メイングローバルナビゲーション">
+      <ul>
+        <li><a href="index.html#services" aria-current="page">サービス</a></li>
+        <li><a href="index.html#pricing">ご支援パターン</a></li>
+        <li><a href="index.html#cases">導入事例</a></li>
+        <li><a href="index.html#news">ニュース</a></li>
+        <li><a href="company.html">会社概要</a></li>
+        <li><a href="contact.html">お問い合わせ</a></li>
+      </ul>
+    </nav>
+    <div class="header-cta">
+      <a href="https://beequest.jp" class="btn btn-beequest" target="_blank" rel="noopener"><i class="fa-solid fa-cube"></i> BeeQuestを見る</a>
+      <a href="contact.html" class="btn btn-primary">資料請求</a>
+    </div>
+    <button class="hamburger" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="gnav"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="service-hero" aria-labelledby="svc-title">
+  <div class="container service-hero-inner">
+    <div class="service-hero-text">
+      <span class="service-hero-badge"><i class="fa-solid fa-plug"></i> API &amp; INTEGRATION</span>
+      <h1 id="svc-title"><span class="accent">SaaS間の分断</span>を、<br>API連携で解消する。</h1>
+      <p class="service-hero-lead">経理・人事・営業の現場で「SaaSが増えすぎてデータが繋がらない」「同じ情報を何度も入力している」状況は、API連携で解決できます。B2Xは、freee／マネーフォワード／SmartHR／HRMOS／Salesforce等の主要SaaSと、BeeQuestや貴社独自システムをシームレスに接続するAPI連携・Webhook・プラグイン開発をワンストップで提供します。認証・監査・エラーハンドリングまで、エンタープライズ品質で。</p>
+      <div class="service-hero-ctas">
+        <a href="contact.html" class="btn btn-primary btn-lg"><i class="fa-solid fa-file-arrow-down"></i> 資料請求（無料）</a>
+        <a href="contact.html" class="btn btn-outline btn-lg"><i class="fa-solid fa-comments"></i> 無料相談を予約</a>
+      </div>
+      <div class="service-hero-meta">
+        <span><i class="fa-solid fa-circle-check"></i> 99.9% API SLA</span>
+        <span><i class="fa-solid fa-circle-check"></i> OAuth2 / SAML対応</span>
+        <span><i class="fa-solid fa-circle-check"></i> 監査ログ標準装備</span>
+      </div>
+    </div>
+    <div class="service-hero-visual">
+      <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=900&q=80" alt="APIとネットワークのイメージ" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<nav class="service-breadcrumb" aria-label="パンくず">
+  <div class="container"><div class="breadcrumb"><a href="index.html">ホーム</a><i class="fa-solid fa-chevron-right"></i><a href="index.html#services">サービス</a><i class="fa-solid fa-chevron-right"></i><span aria-current="page">API・プラグイン開発</span></div></div>
+</nav>
+
+<div class="container">
+  <div class="svc-stats">
+    <div class="svc-stat"><strong>30<small>+</small></strong><span>連携実績SaaS数</span></div>
+    <div class="svc-stat"><strong>99.9<small>%</small></strong><span>API稼働SLA</span></div>
+    <div class="svc-stat"><strong>4<small>週間</small></strong><span>標準連携の最短開発期間</span></div>
+    <div class="svc-stat"><strong>24/7</strong><span>API監視・運用</span></div>
+  </div>
+</div>
+
+<section class="svc-section" aria-labelledby="api-problems">
+  <div class="container">
+    <div class="svc-head">
+      <span class="svc-eyebrow">Challenges</span>
+      <h2 class="svc-heading" id="api-problems">こんな課題、ありませんか？</h2>
+      <p class="svc-sub">"SaaSを入れただけ"で終わっていませんか？繋がらないと、業務効率は上がりません。</p>
+    </div>
+    <div class="problem-grid">
+      <div class="problem-card"><div class="problem-card-icon"><i class="fa-solid fa-copy"></i></div><h3>同じデータを何度も入力</h3><p>会計システムと販売システム、人事システムで同じデータを手入力している。</p></div>
+      <div class="problem-card"><div class="problem-card-icon"><i class="fa-solid fa-file-csv"></i></div><h3>CSV連携で遅延・ミスが発生</h3><p>日次・月次でCSVエクスポート／インポートしている運用に限界が来ている。</p></div>
+      <div class="problem-card"><div class="problem-card-icon"><i class="fa-solid fa-lock"></i></div><h3>認証・監査が不安</h3><p>OAuth・監査ログ・IP制限など、エンタープライズ要件を満たせるか不安。</p></div>
+      <div class="problem-card"><div class="problem-card-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div><h3>iPaaSでは要件を満たせない</h3><p>ZapierやMakeでは複雑な業務ロジックまで作り切れない。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="svc-section alt" aria-labelledby="api-features">
+  <div class="container">
+    <div class="svc-head">
+      <span class="svc-eyebrow">Features</span>
+      <h2 class="svc-heading">B2X API開発の<span class="accent">強み</span></h2>
+    </div>
+    <div class="sf-grid">
+      <article class="sf-card"><span class="sf-card-num">01</span><div class="sf-card-icon"><i class="fa-solid fa-sitemap"></i></div><h3>業務ドメイン理解</h3><p>会計・人事・販売の業務ロジックを理解したエンジニアが要件定義から参画。データモデルの翻訳ミスが起きません。</p></article>
+      <article class="sf-card"><span class="sf-card-num">02</span><div class="sf-card-icon"><i class="fa-solid fa-plug-circle-check"></i></div><h3>主要SaaSを網羅</h3><p>freee、マネーフォワード、SmartHR、HRMOS、Salesforce、kintone等、30以上のSaaS連携実績があります。</p></article>
+      <article class="sf-card"><span class="sf-card-num">03</span><div class="sf-card-icon"><i class="fa-solid fa-shield-halved"></i></div><h3>OAuth2 / SAML / 監査ログ</h3><p>認証・認可・監査をエンタープライズグレードで実装。IP制限、ロール管理、権限管理まで設計します。</p></article>
+      <article class="sf-card"><span class="sf-card-num">04</span><div class="sf-card-icon"><i class="fa-solid fa-triangle-exclamation"></i></div><h3>エラー耐性設計</h3><p>リトライ、冪等性、デッドレターキュー、バックプレッシャを考慮した堅牢なインテグレーションを設計します。</p></article>
+      <article class="sf-card"><span class="sf-card-num">05</span><div class="sf-card-icon"><i class="fa-solid fa-bolt"></i></div><h3>Webhook / イベント駆動</h3><p>バッチではなくリアルタイム連携を標準で。BeeQuest API / Webhooksも駆使し、業務の即時性を確保します。</p></article>
+      <article class="sf-card"><span class="sf-card-num">06</span><div class="sf-card-icon"><i class="fa-solid fa-eye"></i></div><h3>監視・オブザーバビリティ</h3><p>Datadog / NewRelic / CloudWatch連携、API呼び出し数・エラー率・レイテンシのダッシュボード化まで標準装備。</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="svc-section" aria-labelledby="api-offerings">
+  <div class="container">
+    <div class="svc-head">
+      <span class="svc-eyebrow">What we offer</span>
+      <h2 class="svc-heading" id="api-offerings">提供メニュー</h2>
+    </div>
+    <div class="offering-grid">
+      <div class="offering-card"><h3><i class="fa-solid fa-arrow-right-arrow-left"></i> SaaS間API連携</h3><p>会計・人事・営業・タレントマネジメントSaaSを相互接続。データ同期の自動化を実現。</p><ul><li>freee / マネーフォワード会計</li><li>SmartHR / HRMOS / カオナビ</li><li>Salesforce / HubSpot / kintone</li></ul></div>
+      <div class="offering-card"><h3><i class="fa-solid fa-puzzle-piece"></i> プラグイン・アドオン開発</h3><p>Slack、Teams、Chatwork、Salesforce AppExchange等のプラグインを開発。</p><ul><li>Slack App / Bolt</li><li>Teams アプリ</li><li>Salesforce Lightning Component</li></ul></div>
+      <div class="offering-card"><h3><i class="fa-solid fa-cube"></i> BeeQuest API活用</h3><p>BeeQuestのAPI / Webhookを活用し、学習データを人事・BIに連携します。</p><ul><li>受講履歴の人事マスターへ反映</li><li>BIダッシュボードとの連携</li><li>Slack通知・リマインダー</li></ul></div>
+      <div class="offering-card"><h3><i class="fa-solid fa-diagram-project"></i> API基盤・API Gateway構築</h3><p>独自API基盤の設計・実装。OpenAPI仕様書作成、API Gateway運用まで。</p><ul><li>REST / GraphQL</li><li>API Gateway（AWS / Apigee / Kong）</li><li>開発者ポータル構築</li></ul></div>
+      <div class="offering-card"><h3><i class="fa-solid fa-database"></i> データ同期基盤</h3><p>iPaaSでは実現できない業務ロジックを含む複雑なデータ同期を開発。</p><ul><li>ETL / ELTパイプライン</li><li>Change Data Capture</li><li>メッセージング（SQS / Kafka）</li></ul></div>
+      <div class="offering-card"><h3><i class="fa-solid fa-headset"></i> API運用保守</h3><p>APIの監視・障害対応・アップデート対応を継続的に支援。</p><ul><li>24/7監視体制</li><li>SaaSのAPI仕様変更対応</li><li>パフォーマンスチューニング</li></ul></div>
+    </div>
+
+    <div class="tech-stack" style="margin-top: 48px;">
+      <span class="tech-chip"><i class="fa-solid fa-lock"></i> OAuth 2.0 / OIDC</span>
+      <span class="tech-chip"><i class="fa-solid fa-key"></i> SAML 2.0</span>
+      <span class="tech-chip"><i class="fa-solid fa-bolt"></i> Webhooks</span>
+      <span class="tech-chip"><i class="fa-solid fa-diagram-project"></i> GraphQL</span>
+      <span class="tech-chip"><i class="fa-brands fa-aws"></i> AWS API Gateway</span>
+      <span class="tech-chip"><i class="fa-solid fa-fire"></i> Firebase Functions</span>
+      <span class="tech-chip"><i class="fa-brands fa-node-js"></i> Node.js / NestJS</span>
+      <span class="tech-chip"><i class="fa-brands fa-python"></i> Python / FastAPI</span>
+      <span class="tech-chip"><i class="fa-solid fa-k"></i> Kafka / SQS</span>
+      <span class="tech-chip"><i class="fa-solid fa-chart-line"></i> Datadog</span>
+    </div>
+  </div>
+</section>
+
+<section class="svc-section alt" aria-labelledby="api-flow">
+  <div class="container">
+    <div class="svc-head"><span class="svc-eyebrow">Flow</span><h2 class="svc-heading" id="api-flow">開発の流れ</h2></div>
+    <div class="flow-steps">
+      <div class="flow-step"><i class="fa-solid fa-lightbulb flow-step-icon"></i><span class="flow-step-num">01</span><h3>ヒアリング</h3><p>接続先SaaS・データフロー・業務要件を把握。</p></div>
+      <div class="flow-step"><i class="fa-solid fa-pen-ruler flow-step-icon"></i><span class="flow-step-num">02</span><h3>設計</h3><p>API仕様、データマッピング、エラー設計、認証方式を決定。</p></div>
+      <div class="flow-step"><i class="fa-solid fa-code flow-step-icon"></i><span class="flow-step-num">03</span><h3>実装・検証</h3><p>開発、ユニットテスト、結合テスト、負荷試験を実施。</p></div>
+      <div class="flow-step"><i class="fa-solid fa-rocket flow-step-icon"></i><span class="flow-step-num">04</span><h3>本番展開</h3><p>段階ロールアウト、監視設定、運用移管。</p></div>
+      <div class="flow-step"><i class="fa-solid fa-arrows-rotate flow-step-icon"></i><span class="flow-step-num">05</span><h3>運用・改善</h3><p>SaaS仕様変更追随、機能追加、パフォーマンス改善。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="svc-section" aria-labelledby="api-pricing">
+  <div class="container">
+    <div class="svc-head"><span class="svc-eyebrow">Pricing</span><h2 class="svc-heading" id="api-pricing">料金プラン</h2></div>
+    <div class="plan-grid">
+      <article class="plan-card">
+        <h3 class="plan-name">単発API連携</h3>
+        <p class="plan-desc">1〜2つのSaaS間の連携を素早く。</p>
+        <p class="plan-price">お問い合わせ</p>
+        <p class="plan-note">4週間〜 / 固定費</p>
+        <ul class="plan-features"><li>設計〜実装〜本番展開</li><li>OAuth / APIキー認証</li><li>シンプルなデータ同期</li></ul>
+        <a href="contact.html" class="btn btn-outline">資料請求</a>
+      </article>
+      <article class="plan-card is-recommended">
+        <span class="plan-ribbon">RECOMMENDED</span>
+        <h3 class="plan-name">API基盤構築</h3>
+        <p class="plan-desc">複数SaaSと連携する統合基盤。</p>
+        <p class="plan-price">お問い合わせ</p>
+        <p class="plan-note">3〜6ヶ月 / 月額ベース</p>
+        <ul class="plan-features"><li>API Gateway構築</li><li>複数SaaS連携</li><li>監査・セキュリティ実装</li><li>運用保守6ヶ月無償</li></ul>
+        <a href="contact.html" class="btn btn-primary">無料相談する</a>
+      </article>
+      <article class="plan-card">
+        <h3 class="plan-name">運用保守</h3>
+        <p class="plan-desc">既存APIの運用・機能追加。</p>
+        <p class="plan-price">お問い合わせ</p>
+        <p class="plan-note">月額ベース</p>
+        <ul class="plan-features"><li>24/7監視</li><li>SaaS API仕様変更追随</li><li>機能追加開発</li></ul>
+        <a href="contact.html" class="btn btn-outline">お問い合わせ</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="svc-section alt" aria-labelledby="api-cases">
+  <div class="container">
+    <div class="svc-head"><span class="svc-eyebrow">Cases</span><h2 class="svc-heading" id="api-cases">導入事例</h2></div>
+    <div class="case-grid-svc">
+      <article class="case-card-svc"><div class="case-thumb"><img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=900&q=80" alt="事例1" loading="lazy"></div><div class="case-card-svc-body"><span class="case-tag">SaaS業</span><h3>freee × 販売管理システム連携</h3><p>受注→請求→仕訳を自動化、経理工数を月40時間削減。</p><div class="case-metrics"><div class="case-metric"><span>工数</span><strong>-40h/月</strong></div><div class="case-metric"><span>期間</span><strong>2ヶ月</strong></div><div class="case-metric"><span>ROI</span><strong>9ヶ月</strong></div></div></div></article>
+      <article class="case-card-svc"><div class="case-thumb"><img src="https://images.unsplash.com/photo-1555212697-194d092e3b8f?w=900&q=80" alt="事例2" loading="lazy"></div><div class="case-card-svc-body"><span class="case-tag">製造業 / 5,000名</span><h3>SmartHR × BeeQuest 受講データ連携</h3><p>人事マスターと学習データを自動連携、異動時の受講管理を自動化。</p><div class="case-metrics"><div class="case-metric"><span>手作業</span><strong>-90%</strong></div><div class="case-metric"><span>期間</span><strong>6週間</strong></div><div class="case-metric"><span>同期</span><strong>リアルタイム</strong></div></div></div></article>
+      <article class="case-card-svc"><div class="case-thumb"><img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=900&q=80" alt="事例3" loading="lazy"></div><div class="case-card-svc-body"><span class="case-tag">金融</span><h3>エンタープライズAPI基盤の構築</h3><p>15システム間のデータ連携を、API Gateway + イベント駆動で統合。</p><div class="case-metrics"><div class="case-metric"><span>連携数</span><strong>15</strong></div><div class="case-metric"><span>期間</span><strong>6ヶ月</strong></div><div class="case-metric"><span>稼働</span><strong>99.95%</strong></div></div></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="svc-section" aria-labelledby="api-faq">
+  <div class="container">
+    <div class="svc-head"><span class="svc-eyebrow">FAQ</span><h2 class="svc-heading" id="api-faq">よくあるご質問</h2></div>
+    <div class="faq-list">
+      <details class="faq-item"><summary>iPaaS（Zapier, Make等）ではダメですか？</summary><div class="faq-a">シンプルな連携ではiPaaSも有効ですが、複雑な業務ロジック・監査要件・エラー耐性が必要な場合は個別開発を推奨します。併用設計も提案可能です。</div></details>
+      <details class="faq-item"><summary>公開APIがないSaaSでも連携できますか？</summary><div class="faq-a">RPA、ブラウザ自動化、SaaS側への連携機能追加依頼など、代替手段を組み合わせて対応するケースもあります。</div></details>
+      <details class="faq-item"><summary>認証・セキュリティはどう担保しますか？</summary><div class="faq-a">OAuth 2.0 / SAML / mTLS / IP制限 / 監査ログ / WAFなど、エンタープライズ要件を満たす設計を標準で提供します。</div></details>
+      <details class="faq-item"><summary>BeeQuestとのAPI連携はすぐできますか？</summary><div class="faq-a">BeeQuestは豊富なAPI / Webhookを標準提供しています。自社で最も理解している基盤なので、最短スパンで連携できます。</div></details>
+      <details class="faq-item"><summary>連携先SaaSのAPI仕様変更には対応してもらえますか？</summary><div class="faq-a">運用保守契約の範囲内で対応します。SaaS側のロードマップも監視し、事前に対応設計します。</div></details>
+      <details class="faq-item"><summary>業務ロジックの相談だけでも大丈夫ですか？</summary><div class="faq-a">はい、初回ヒアリング・要件整理は無料で対応します。実装せず設計書だけの納品も可能です。</div></details>
+    </div>
+  </div>
+</section>
+
+<section class="svc-section alt" aria-labelledby="api-related">
+  <div class="container">
+    <div class="svc-head"><span class="svc-eyebrow">Related</span><h2 class="svc-heading" id="api-related">関連サービス</h2></div>
+    <div class="related-grid">
+      <a href="service-si.html" class="related-card"><div class="related-card-icon"><i class="fa-solid fa-code-branch"></i></div><h3>受託システム開発 / SI</h3><p>API連携を超えた本格開発もお任せください。</p><span class="related-more">詳しく見る <i class="fa-solid fa-arrow-right"></i></span></a>
+      <a href="service-beequest.html" class="related-card"><div class="related-card-icon"><i class="fa-solid fa-cube"></i></div><h3>BeeQuest</h3><p>学習データとのAPI連携も当社の得意領域です。</p><span class="related-more">詳しく見る <i class="fa-solid fa-arrow-right"></i></span></a>
+      <a href="service-ax.html" class="related-card"><div class="related-card-icon"><i class="fa-solid fa-rotate"></i></div><h3>AX・教育DX支援</h3><p>会計システム統合プロジェクトもお任せください。</p><span class="related-more">詳しく見る <i class="fa-solid fa-arrow-right"></i></span></a>
+    </div>
+  </div>
+</section>
+
+<section class="service-cta" aria-labelledby="api-cta">
+  <div class="container service-cta-inner">
+    <h2 id="api-cta">SaaS分断を解消する<span class="accent">API戦略</span>、ご相談ください。</h2>
+    <p>貴社のSaaSスタック・業務フローを踏まえて、最適な連携アーキテクチャをご提案します。</p>
+    <div class="service-cta-ctas">
+      <a href="contact.html" class="btn btn-primary btn-lg"><i class="fa-solid fa-file-arrow-down"></i> 資料請求する</a>
+      <a href="contact.html" class="btn btn-outline btn-lg"><i class="fa-solid fa-calendar-check"></i> 無料相談を予約</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<section class="beequest-banner" aria-label="BeeQuestサービスへの導線">
+  <div class="container beequest-banner-inner">
+    <div class="bq-banner-left">
+      <span class="bq-banner-badge"><i class="fa-solid fa-cube"></i> FLAGSHIP</span>
+      <h2>当社の主力サービス<br><span class="accent">BeeQuest</span> を見る</h2>
+      <p>企業研修・個人のリスキリングを支える、B2Xの自社開発プラットフォーム。</p>
+    </div>
+    <div class="bq-banner-right">
+      <a href="https://beequest.jp" target="_blank" rel="noopener" class="btn btn-primary btn-lg">BeeQuestサイトへ <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      <a href="contact.html" class="btn btn-outline btn-lg">無料で相談する</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer" role="contentinfo">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="logo logo-light"><i class="fa-solid fa-cube"></i><span>B2X</span></a>
+      <address class="footer-desc">株式会社B2X<br>〒104-0061<br>東京都中央区銀座7丁目13番20号9F<br>法人番号: 8010001263785</address>
+      <ul class="footer-sns">
+        <li><a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a></li>
+        <li><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
+        <li><a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a></li>
+        <li><a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></li>
+      </ul>
+    </div>
+    <div class="footer-cols">
+      <nav class="footer-col"><h2 class="footer-col-title">サービス</h2>
+        <a href="service-beequest.html">BeeQuest</a><a href="service-lms.html">LMS開発</a><a href="service-si.html">受託システム開発 / SI</a><a href="service-accounting.html">会計教育コンテンツ</a><a href="service-ax.html">AX・教育DX支援</a><a href="service-api.html">API・プラグイン開発</a>
+      </nav>
+      <nav class="footer-col"><h2 class="footer-col-title">お問い合わせ</h2>
+        <a href="contact.html">資料ダウンロード</a><a href="contact.html">オンライン相談</a><a href="faq.html">よくある質問</a><a href="#">BeeQuestサポート</a>
+      </nav>
+      <nav class="footer-col"><h2 class="footer-col-title">会社情報</h2>
+        <a href="company.html">会社概要</a><a href="company.html#message">代表メッセージ</a><a href="#">採用情報</a><a href="index.html#news">ニュース</a><a href="contact.html">お問い合わせ</a>
+      </nav>
+      <nav class="footer-col"><h2 class="footer-col-title">ポリシー</h2>
+        <a href="#">利用規約</a><a href="#">プライバシーポリシー</a><a href="#">特定商取引法</a><a href="#">情報セキュリティ方針</a>
+      </nav>
+    </div>
+  </div>
+  <div class="footer-bottom"><div class="container"><p><small>&copy; 2026 B2X Inc. All Rights Reserved.</small> <span class="disclaimer">※本サイトはデモ用に作成されたサンプルです。</span></p></div></div>
+</footer>
+
+<button class="pagetop" type="button" aria-label="ページトップへ戻る"><i class="fa-solid fa-chevron-up"></i></button>
+
+<script src="script.js"></script>
+</body>
+</html>
