@@ -791,7 +791,6 @@ svg.hero-deco {
   color: #6b7689;
   text-align: center;
 }
-.footer-bottom .disclaimer { margin-left: 12px; opacity: .7; }
 
 /* =========================================================
    Pagetop
@@ -2226,41 +2225,6 @@ svg.hero-deco {
 .service-cta-ctas .btn-outline { border-color: #fff; color: #fff; background: transparent; }
 .service-cta-ctas .btn-outline:hover { background: #fff; color: var(--primary-dark); }
 
-/* Stats strip (used inside hero or below hero) */
-.svc-stats {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 0;
-  background: #fff;
-  border-radius: 14px;
-  box-shadow: var(--shadow);
-  overflow: hidden;
-  margin-top: -48px;
-  position: relative;
-  z-index: 2;
-}
-.svc-stat {
-  padding: 26px 22px;
-  text-align: center;
-  border-right: 1px solid #e4e8ef;
-}
-.svc-stat:last-child { border-right: none; }
-.svc-stat strong {
-  font-family: "Montserrat", sans-serif;
-  font-size: 28px;
-  font-weight: 800;
-  color: var(--primary);
-  display: block;
-  line-height: 1.2;
-}
-.svc-stat strong small { font-size: 14px; color: #5a6478; font-weight: 600; }
-.svc-stat span {
-  font-size: 12px;
-  color: #5a6478;
-  margin-top: 4px;
-  display: block;
-}
-
 /* Tech stack chips */
 .tech-stack {
   display: flex;
@@ -2353,10 +2317,6 @@ svg.hero-deco {
   .offering-table tbody th { width: 140px; font-size: 12px; padding: 12px 14px; }
   .offering-table td { padding: 12px 14px; font-size: 13px; }
   .service-cta h2 { font-size: 22px; }
-  .svc-stats { margin-top: -24px; grid-template-columns: repeat(2, 1fr); }
-  .svc-stat { border-bottom: 1px solid #e4e8ef; }
-  .svc-stat:nth-child(2n) { border-right: none; }
-  .svc-stat:nth-last-child(-n+2) { border-bottom: none; }
 }
 @media (max-width: 600px) {
   .service-hero h1 { font-size: 24px; }
@@ -2364,10 +2324,6 @@ svg.hero-deco {
   .service-hero-ctas { gap: 10px; }
   .service-hero-ctas .btn { flex: 1 1 auto; justify-content: center; padding: 14px 18px; font-size: 14px; }
   .service-hero-meta { gap: 14px 20px; font-size: 11px; }
-  .svc-stats { grid-template-columns: 1fr; margin-top: -20px; }
-  .svc-stat { border-right: none; border-bottom: 1px solid #e4e8ef; padding: 20px 16px; }
-  .svc-stat:last-child { border-bottom: none; }
-  .svc-stat strong { font-size: 24px; }
   .faq-item summary { padding: 16px 48px 16px 50px; font-size: 14px; }
   .faq-item summary::before { left: 14px; top: 15px; }
   .faq-item summary::after { right: 16px; top: 19px; }
@@ -2498,9 +2454,6 @@ svg.hero-deco {
   .related-card { padding: 22px 18px; }
   .related-card h3 { font-size: 16px; }
   .related-card p { font-size: 13px; line-height: 1.75; }
-  .svc-stats { margin-top: -20px; }
-  .svc-stat { padding: 22px 14px; }
-  .svc-stat strong { font-size: 24px; }
 
   /* Beequest section */
   .beequest-section { padding: 52px 0; }
