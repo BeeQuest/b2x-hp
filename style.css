@@ -2130,6 +2130,16 @@ svg.hero-deco {
 }
 
 /* FAQ */
+/* FAQ カテゴリ見出しの間隔 */
+.section .company-section-title {
+  margin-top: 48px;
+}
+.section .company-section-title:first-child {
+  margin-top: 0;
+}
+.section .faq-list {
+  margin-bottom: 0;
+}
 .faq-list {
   max-width: 860px;
   margin: 0 auto;
