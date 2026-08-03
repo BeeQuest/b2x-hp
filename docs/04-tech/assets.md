@@ -6,15 +6,14 @@
 
 - ルート直下: `logo.png`, `ogp.png`, `favicon.svg`
 - コンテンツ画像の多くが Unsplash CDN
-- 代表写真なし（Font Awesome `fa-user`）
-- `images/` ディレクトリなし
+- 代表写真: `images/company/representative.jpg`（配置済み）
 
 ## 目標構成
 
 ```
 images/
   company/
-    representative.jpg   # 代表 金子佳樹（素材入手後）
+    representative.jpg   # 代表 金子佳樹（配置済み）
   partners/
     exs-kaikei.svg       # TBD
     exs-flema.svg        # TBD
@@ -28,11 +27,11 @@ images/
 
 ## 方針
 
-1. 代表写真: 入手後 `images/company/representative.jpg` に配置し `company` ページで使用
+1. 代表写真: `images/company/representative.jpg` を `company` ページで表示（対応済み）
 2. 提携ロゴ: URL確定と同時に `images/partners/` へ
 3. Unsplash: 装飾用途は段階的に削減。必須でなければ SVG / CSS で代替
 4. 著作権: ストック写真を残す場合はライセンス確認
 
-## プレースホルダ
+## フォールバック
 
-代表写真未入手の間は、円形アバター枠 + 写真パスを用意し、ファイルが無い場合は既存アイコンフォールバックでも可。実装時は `images/company/representative.jpg` を参照するマークアップにし、素材追加だけで表示されるようにする。
+`company.njk` は写真読み込み失敗時に Font Awesome `fa-user` へ切り替える。
