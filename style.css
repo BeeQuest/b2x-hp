@@ -1438,8 +1438,8 @@ svg.hero-deco {
   align-items: center;
 }
 .message-avatar {
-  width: 220px;
-  height: 220px;
+  width: 180px;
+  height: 180px;
   background: linear-gradient(135deg, #1a56b8, #0f3d85);
   border-radius: 50%;
   display: flex;
@@ -1456,7 +1456,7 @@ svg.hero-deco {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 30%;
+  object-position: center 18%;
   display: block;
 }
 .message-avatar .message-avatar-fallback { display: none; }
