@@ -1,0 +1,17 @@
+{
+  "name": "b2x-hp",
+  "private": true,
+  "version": "1.0.0",
+  "description": "株式会社B2X コーポレートサイト",
+  "type": "module",
+  "scripts": {
+    "build": "eleventy",
+    "dev": "eleventy --serve --watch",
+    "capture": "node scripts/capture-beequest.mjs",
+    "serve": "npx serve _site -l 8000"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "playwright": "^1.54.0"
+  }
+}

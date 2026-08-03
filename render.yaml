@@ -2,8 +2,8 @@ services:
   - type: web
     name: b2x-hp
     env: static
-    buildCommand: echo "no build needed"
-    staticPublishPath: .
+    buildCommand: npm ci && npm run build
+    staticPublishPath: _site
     pullRequestPreviewsEnabled: true
     headers:
       - path: /*
@@ -25,3 +25,39 @@ services:
       - type: rewrite
         source: /contact
         destination: /contact.html
+      - type: rewrite
+        source: /faq
+        destination: /faq.html
+      - type: rewrite
+        source: /service-beequest
+        destination: /service-beequest.html
+      - type: rewrite
+        source: /service-si
+        destination: /service-si.html
+      - type: rewrite
+        source: /service-partners
+        destination: /service-partners.html
+      - type: rewrite
+        source: /service-accounting.html
+        destination: /service-beequest.html
+      - type: rewrite
+        source: /service-accounting
+        destination: /service-beequest.html
+      - type: rewrite
+        source: /service-api.html
+        destination: /service-si.html
+      - type: rewrite
+        source: /service-api
+        destination: /service-si.html
+      - type: rewrite
+        source: /service-lms.html
+        destination: /service-si.html
+      - type: rewrite
+        source: /service-lms
+        destination: /service-si.html
+      - type: rewrite
+        source: /service-ax.html
+        destination: /service-partners.html
+      - type: rewrite
+        source: /service-ax
+        destination: /service-partners.html

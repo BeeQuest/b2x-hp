@@ -117,8 +117,17 @@
         return;
       }
 
-      alert("お問い合わせを受け付けました。担当者よりご連絡いたします。");
-      form.reset();
+      // 送信バックエンド未接続（Issue #1）。偽の受付完了を出さない。
+      const status = $("#form-status", form);
+      const message =
+        "フォーム送信機能は準備中です。お手数ですが info@b2x.co.jp までメールでご連絡ください。";
+      if (status) {
+        status.hidden = false;
+        status.textContent = message;
+        status.classList.add("show");
+      } else {
+        alert(message);
+      }
     });
   };
 
@@ -214,20 +223,20 @@
 
   /* ---------- Pricing tabs (ARIA tab pattern) ---------- */
   const pricingData = {
-    dx: [
-      { name: "現状診断プラン",   desc: "現状診断・ロードマップ策定",           features: ["教育・研修の現状アセスメント", "DX推進ロードマップ策定", "KPI・効果測定設計", "経営層・現場向け報告会", "期間目安: 1〜2ヶ月"], recommended: false },
-      { name: "伴走変革プラン",   desc: "研修設計 × BeeQuest実装まで伴走",     features: ["カリキュラム・教材設計", "BeeQuest上での学習環境構築", "既存システムとの連携開発", "運用定着・効果測定", "専任コンサルタントが伴走", "期間目安: 4〜9ヶ月"], recommended: true },
-      { name: "全社AXプラン",     desc: "会計業務そのものの再設計",             features: ["AX戦略立案・業務棚卸し", "会計システム / API連携設計", "経理チームの育成・リスキリング", "業務効率化ツール開発", "全社展開・PMOサポート", "期間目安: 6ヶ月〜"], recommended: false }
-    ],
     beequest: [
-      { name: "スタータープラン",   desc: "小規模チームでまず試す",             features: ["標準コンテンツ利用", "最大50アカウント", "学習進捗ダッシュボード", "メールサポート", "導入時オンボーディング"], recommended: false },
-      { name: "ビジネスプラン",     desc: "全社展開・独自コンテンツ運用",        features: ["無制限アカウント", "オリジナル教材アップロード", "部署・役職別の学習設計", "習熟度分析レポート", "SSO / ID連携", "専任カスタマーサクセス"], recommended: true },
-      { name: "エンタープライズプラン", desc: "既存システムと深く連携",        features: ["人事・会計システムとのAPI連携", "SCIMユーザープロビジョニング", "カスタム開発・プラグイン", "監査ログ・セキュリティ強化", "SLA・専用サポート体制"], recommended: false }
+      { name: "導入設計プラン", desc: "育成ゴールの整理と導入設計", features: ["現状ヒアリング・課題整理", "オンボーディング／育成設計", "BeeQuest導入方針の策定", "期間目安: 2〜6週間"], recommended: false },
+      { name: "伴走運用プラン", desc: "導入から定着・改善まで伴走", features: ["BeeQuest環境構築・コンテンツ整備", "運用定着・改善サイクル", "評価・次ステップへの接続設計", "長期伴走（成長を見据えた支援）"], recommended: true },
+      { name: "継続パートナー", desc: "組織の成長に合わせた継続支援", features: ["定期レビュー・改善提案", "コンテンツ・設計の更新", "今後機能（評価・ROI等）への接続"], recommended: false }
     ],
-    accounting: [
-      { name: "基礎コース",      desc: "簿記・財務会計の基礎を体系化",           features: ["簿記3級〜2級相当カリキュラム", "実務者監修の動画教材", "章末テスト・添削", "BeeQuest上で受講管理", "期間目安: 2〜3ヶ月"], recommended: false },
-      { name: "実務者コース",    desc: "経理実務者のリスキリング",                features: ["管理会計 / 連結 / IFRS対応", "ケーススタディ・ロールプレイ", "現場課題ベースの演習", "講師によるライブ質疑応答", "習熟度別の個別学習設計", "期間目安: 3〜6ヶ月"], recommended: true },
-      { name: "リーダーコース",  desc: "経理マネジャー・CFO候補育成",             features: ["財務戦略・投資意思決定", "AX推進リーダーシップ研修", "経営シミュレーション", "社外講師・実務家ゲスト講義", "個別コーチング付き", "期間目安: 6ヶ月〜"], recommended: false }
+    si: [
+      { name: "ディスカバリー", desc: "目的整理とスコープ設計", features: ["課題・ゴールのヒアリング", "実装方針の提案", "概算レンジの提示", "期間目安: 1〜4週間"], recommended: false },
+      { name: "伴走開発", desc: "設計から実装・活用まで一貫支援", features: ["要件整理〜実装計画", "開発・リリース", "活用方法の伴走", "AI活用による効率的な進め方"], recommended: true },
+      { name: "運用・改善", desc: "リリース後の継続改善", features: ["運用サポート", "機能改善", "LMS / API連携の拡張"], recommended: false }
+    ],
+    partners: [
+      { name: "会計領域", desc: "提携先と連携した会計支援", features: ["ヒアリング・要件整理", "提携先との連携提案", "エクス会計・エクスフリマ等"], recommended: false },
+      { name: "マーケティング", desc: "SEO等を提携企業と連携", features: ["課題整理", "提携先との進め方提案", "HP・マーケ支援も相談可"], recommended: true },
+      { name: "その他連携", desc: "採用など（展開準備中）", features: ["人材採用は対応可能な場合あり", "現時点では提携先リンク非掲載", "まずはご相談ください"], recommended: false }
     ]
   };
 

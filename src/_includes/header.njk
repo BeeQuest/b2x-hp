@@ -1,0 +1,50 @@
+<header class="header">
+  <div class="container header-inner">
+    <a href="/" class="logo" aria-label="株式会社B2X ホーム">
+      <i class="fa-solid fa-cube" aria-hidden="true"></i>
+      <span>B2X</span>
+    </a>
+    <nav class="gnav" id="gnav" aria-label="メイングローバルナビゲーション">
+      <ul>
+        <li>
+          <a href="/#services" aria-haspopup="true" aria-expanded="false"{% if pageId == "services" %} aria-current="page"{% endif %}>サービス<i class="fa-solid fa-chevron-down" aria-hidden="true"></i></a>
+          <div class="megamenu" role="menu">
+            <div class="megamenu-col">
+              <p class="megamenu-heading">BeeQuest育成支援</p>
+              <a href="/service-beequest.html">BeeQuest育成支援</a>
+              <a href="/service-beequest.html#design">育成・オンボーディング設計</a>
+              <a href="/service-beequest.html#roadmap">伴走支援</a>
+            </div>
+            <div class="megamenu-col">
+              <p class="megamenu-heading">受託システム開発</p>
+              <a href="/service-si.html">受託システム開発</a>
+              <a href="/service-si.html#lms">LMS開発</a>
+              <a href="/service-si.html#integration">API連携・自動化</a>
+            </div>
+            <div class="megamenu-col">
+              <p class="megamenu-heading">提携による支援</p>
+              <a href="/service-partners.html">提携による支援</a>
+              <a href="/service-partners.html#accounting">会計領域</a>
+              <a href="/service-partners.html#marketing">マーケティング</a>
+            </div>
+          </div>
+        </li>
+        <li><a href="/#pricing">ご支援パターン</a></li>
+        <li><a href="/#cases">導入事例</a></li>
+        <li><a href="/#news">ニュース</a></li>
+        <li><a href="/company.html"{% if pageId == "company" %} aria-current="page"{% endif %}>会社概要</a></li>
+        <li><a href="/contact.html"{% if pageId == "contact" %} aria-current="page"{% endif %}>お問い合わせ</a></li>
+      </ul>
+    </nav>
+    <div class="header-cta">
+      <a href="https://beequest.app" class="btn btn-beequest" target="_blank" rel="noopener">
+        <img src="/images/beequest/logo-icon.svg" alt="" width="18" height="18" class="btn-beequest-icon" aria-hidden="true">
+        BeeQuestを見る
+      </a>
+      <a href="/contact.html" class="btn btn-primary">資料請求</a>
+    </div>
+    <button class="hamburger" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="gnav">
+      <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+    </button>
+  </div>
+</header>

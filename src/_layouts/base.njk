@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ title }}</title>
+<meta name="description" content="{{ description }}">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#1a73e8">
+<link rel="canonical" href="{{ canonical }}">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="株式会社B2X">
+<meta property="og:title" content="{{ title }}">
+<meta property="og:description" content="{{ description }}">
+<meta property="og:url" content="{{ canonical }}">
+<meta property="og:image" content="https://b2x.co.jp/ogp.png">
+<meta property="og:locale" content="ja_JP">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ title }}">
+<meta name="twitter:description" content="{{ description }}">
+<meta name="twitter:image" content="https://b2x.co.jp/ogp.png">
+
+{% if jsonLd %}
+<script type="application/ld+json">{{ jsonLd | safe }}</script>
+{% endif %}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/favicon.svg">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<a href="#main" class="skip-link">本文へスキップ</a>
+{% include "topbar.njk" %}
+{% include "header.njk" %}
+<main id="main">
+{{ content | safe }}
+</main>
+{% include "beequest-banner.njk" %}
+{% include "footer.njk" %}
+<button class="pagetop" type="button" aria-label="ページトップへ戻る"><i class="fa-solid fa-chevron-up" aria-hidden="true"></i></button>
+<script src="/script.js"></script>
+</body>
+</html>

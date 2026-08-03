@@ -1,0 +1,114 @@
+---
+layout: base.njk
+title: お問い合わせ｜株式会社B2X
+description: 株式会社B2Xへのお問い合わせ。BeeQuest育成支援・受託システム開発・提携支援に関するご相談はこちらから。
+canonical: https://b2x.co.jp/contact.html
+pageId: contact
+---
+
+<!-- Page hero -->
+<section class="page-hero" aria-labelledby="page-title">
+  <div class="container page-hero-inner">
+    <nav class="breadcrumb" aria-label="パンくず">
+      <a href="/">ホーム</a>
+      <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+      <span aria-current="page">お問い合わせ</span>
+    </nav>
+    <h1 class="page-title" id="page-title">お問い合わせ</h1>
+    <p class="page-subtitle">BeeQuest育成支援・受託開発・提携支援に関するご相談はこちらから。通常2営業日以内にご返信いたします。</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="contact-grid">
+      <aside class="contact-info" aria-labelledby="contact-info-title">
+        <h2 id="contact-info-title">お問い合わせ先</h2>
+        <dl>
+          <div>
+            <dt><i class="fa-regular fa-envelope" aria-hidden="true"></i> メール</dt>
+            <dd><a href="mailto:info@b2x.co.jp">info@b2x.co.jp</a></dd>
+          </div>
+          <div>
+            <dt><i class="fa-solid fa-location-dot" aria-hidden="true"></i> 所在地</dt>
+            <dd>〒104-0061<br>東京都中央区銀座7丁目13番20号9F</dd>
+          </div>
+          <div>
+            <dt><i class="fa-solid fa-building" aria-hidden="true"></i> 商号 / 法人番号</dt>
+            <dd>株式会社B2X<br>法人番号: 8010001263785</dd>
+          </div>
+        </dl>
+        <p class="contact-notice">いただいたお問い合わせ内容は、当社のプライバシーポリシーに基づき適切に管理し、ご返信以外の目的には利用いたしません。</p>
+      </aside>
+
+      <form id="contact-form" class="contact-form" action="#" method="post" novalidate aria-labelledby="contact-form-title">
+        <h2 id="contact-form-title" class="company-section-title" style="margin-bottom:24px;">お問い合わせフォーム</h2>
+        <p class="form-notice" id="form-backend-notice" role="status">
+          現在、フォーム送信機能を準備中です。お急ぎの場合は <a href="mailto:info@b2x.co.jp">info@b2x.co.jp</a> までご連絡ください。BeeQuestに関するご相談を歓迎しています。
+        </p>
+
+        <div class="form-row">
+          <label for="f-name" class="form-label">お名前<span class="required">必須</span></label>
+          <input type="text" id="f-name" name="name" class="form-input" autocomplete="name" required>
+          <p class="form-error-msg" role="alert"></p>
+        </div>
+
+        <div class="form-row">
+          <label for="f-company" class="form-label">会社名<span class="optional">任意</span></label>
+          <input type="text" id="f-company" name="company" class="form-input" autocomplete="organization">
+          <p class="form-error-msg" role="alert"></p>
+        </div>
+
+        <div class="form-row">
+          <label for="f-title" class="form-label">部署・役職<span class="optional">任意</span></label>
+          <input type="text" id="f-title" name="title" class="form-input" autocomplete="organization-title">
+          <p class="form-error-msg" role="alert"></p>
+        </div>
+
+        <div class="form-row">
+          <label for="f-email" class="form-label">メールアドレス<span class="required">必須</span></label>
+          <input type="email" id="f-email" name="email" class="form-input" autocomplete="email" required>
+          <p class="form-error-msg" role="alert"></p>
+        </div>
+
+        <div class="form-row">
+          <label for="f-tel" class="form-label">電話番号<span class="optional">任意</span></label>
+          <input type="tel" id="f-tel" name="tel" class="form-input" autocomplete="tel">
+          <p class="form-error-msg" role="alert"></p>
+        </div>
+
+        <div class="form-row">
+          <label for="f-type" class="form-label">お問い合わせ種別<span class="optional">任意</span></label>
+          <select id="f-type" name="type" class="form-select">
+            <option value="">選択してください</option>
+            <option value="beequest">BeeQuest育成支援について</option>
+            <option value="si">受託システム開発について</option>
+            <option value="partners">提携による支援について</option>
+            <option value="recruit">採用について</option>
+            <option value="other">その他</option>
+          </select>
+          <p class="form-error-msg" role="alert"></p>
+        </div>
+
+        <div class="form-row">
+          <label for="f-message" class="form-label">お問い合わせ内容<span class="required">必須</span></label>
+          <textarea id="f-message" name="message" class="form-textarea" required placeholder="具体的なご相談内容、貴社の状況、ご希望の進め方などをご記入ください。"></textarea>
+          <p class="form-error-msg" role="alert"></p>
+        </div>
+
+        <div class="form-check">
+          <input type="checkbox" id="f-agree" name="agree" required>
+          <label for="f-agree">プライバシーポリシー（準備中）に同意の上、送信します。<span class="required">必須</span></label>
+        </div>
+        <div class="form-row">
+          <p class="form-error-msg" role="alert" id="agree-error"></p>
+        </div>
+
+        <div class="form-submit">
+          <button type="submit" class="btn btn-primary btn-lg">この内容で送信する <i class="fa-solid fa-paper-plane" aria-hidden="true"></i></button>
+        </div>
+              <p class="form-status" id="form-status" role="status" aria-live="polite" hidden></p>
+      </form>
+    </div>
+  </div>
+</section>
