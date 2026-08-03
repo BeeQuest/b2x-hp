@@ -49,6 +49,6 @@ docs/
 
 1. BeeQuest育成支援
 2. 受託システム開発
-3. 提携による支援
+3. 専門領域支援（会計・資金調達・マーケ）
 
 詳細は [01-service-ia/service-structure.md](01-service-ia/service-structure.md) を正本とする。

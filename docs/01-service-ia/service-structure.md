@@ -12,18 +12,18 @@ flowchart TB
   top[トップ #services]
   top --> bee[BeeQuest育成支援]
   top --> si[受託システム開発]
-  top --> partner[提携による支援]
+  top --> advisory[専門領域支援]
 
   bee --> beePage[service-beequest.html]
   si --> siPage[service-si.html]
-  partner --> partnerPage[service-partners.html]
+  advisory --> advisoryPage[service-partners.html]
 
   siPage --> lmsSec[見出し: LMS開発]
   siPage --> apiSec[見出し: API連携・自動化など]
 
-  partnerPage --> acctLink[会計提携先へ外部リンク]
-  partnerPage --> mktLink[マーケ提携先へ外部リンク]
-  partnerPage --> hireNote[人材採用: 対応可能の言及のみ]
+  advisoryPage --> acct[会計・経営数字の支援]
+  advisoryPage --> fund[資金調達支援]
+  advisoryPage --> mkt[マーケティング・SEO支援]
 ```
 
 ## 1. BeeQuest育成支援
@@ -59,22 +59,24 @@ flowchart TB
 - 単なる構築で終わらず、業務効率化や売上向上など目的に合わせ、戦略策定〜ニーズ汲み取り〜実装計画〜活用まで一貫支援
 - 他社からのアプリ受注実績がある旨を伝える
 
-## 3. 提携による支援
+## 3. 専門領域支援
 
-自社で詳細ページを個別に持たず、提携支援としてまとめ、提携先HPへリンクする。
+B2Xが直接受ける第3の主軸。表向きに「提携」「提携先と一緒に」は出さない。
 
-| 領域 | 扱い |
+| 領域 | 公開での扱い |
 |---|---|
-| 会計（エクス会計、エクスフリマなど） | 提携支援。外部リンク |
-| マーケティング支援（SEO等） | 提携支援。外部リンク |
-| 人材採用支援 | 対応可能であることのみ示す。現時点ではHP・リンク掲載なし |
+| 会計・経営数字 | freee連携、可視化、販管費等のコスト分析、数字の経営活用 |
+| 資金調達支援 | 証券会社経験を活かしたプランニング等（過度な実績主張はしない） |
+| マーケティング・SEO | 専門的なマーケ／SEO、必要に応じた関連システム構築 |
+
+### 内部メモ（非公開）
+
+実務では専門家と連携して動く場合があるが、契約・窓口はB2X。公開ページに個人名・提携先名は載せない。
 
 ## ナビ構成（確定）
-
-メガメニューは3カラム（各柱）またはフラットな3リンクに簡素化する。
 
 | ラベル | リンク |
 |---|---|
 | BeeQuest育成支援 | `service-beequest.html` |
 | 受託システム開発 | `service-si.html` |
-| 提携による支援 | `service-partners.html` |
+| 専門領域支援 | `service-partners.html` |

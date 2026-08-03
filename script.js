@@ -234,9 +234,9 @@
       { name: "運用・改善", desc: "リリース後の継続改善", features: ["運用サポート", "機能改善", "LMS / API連携の拡張"], recommended: false }
     ],
     partners: [
-      { name: "会計領域", desc: "提携先と連携した会計支援", features: ["ヒアリング・要件整理", "提携先との連携提案", "エクス会計・エクスフリマ等"], recommended: false },
-      { name: "マーケティング", desc: "SEO等を提携企業と連携", features: ["課題整理", "提携先との進め方提案", "HP・マーケ支援も相談可"], recommended: true },
-      { name: "その他連携", desc: "採用など（展開準備中）", features: ["人材採用は対応可能な場合あり", "現時点では提携先リンク非掲載", "まずはご相談ください"], recommended: false }
+      { name: "会計・経営数字", desc: "freee連携・可視化・コスト分析", features: ["freee連携・業務整備", "会計情報の可視化", "販管費などのコスト分析", "数字の経営活用支援"], recommended: true },
+      { name: "資金調達支援", desc: "調達に向けたプランニング", features: ["現状整理と方針設計", "プランニング伴走", "次のアクション設計"], recommended: false },
+      { name: "マーケ・SEO", desc: "専門的なマーケ／SEO支援", features: ["マーケティング施策設計", "SEO支援", "関連システム構築も相談可"], recommended: false }
     ]
   };
 
