@@ -1456,6 +1456,7 @@ svg.hero-deco {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 18%;
   display: block;
 }
 .message-avatar .message-avatar-fallback { display: none; }
