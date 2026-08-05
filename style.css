@@ -2530,3 +2530,29 @@ svg.hero-deco {
   /* Ensure long headings don't overflow */
   .hero-title, .section-title, .svc-heading, .page-title, .service-hero h1 { overflow-wrap: anywhere; word-break: normal; }
 }
+
+/* お問い合わせフォーム: 送信状態の表示 */
+.form-hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.form-status {
+  margin-top: 16px;
+  font-size: 14px;
+  line-height: 1.7;
+  min-height: 1.7em;
+}
+.form-status.is-pending {
+  color: #555;
+}
+.form-status.is-success {
+  color: #0a7d3c;
+  font-weight: 700;
+}
+.form-status.is-error {
+  color: #c0392b;
+  font-weight: 700;
+}
