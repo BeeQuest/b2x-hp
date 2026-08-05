@@ -22,6 +22,17 @@
 var MAIL_TO = 'info@b2x.co.jp';
 var SITE_ORIGIN = 'https://b2x.co.jp';
 
+/**
+ * Slack 通知先の Incoming Webhook URL。
+ * URL は秘密情報なのでコードに直接書かず、スクリプトプロパティに入れる。
+ *   [プロジェクトの設定] > [スクリプト プロパティ] で
+ *   SLACK_WEBHOOK_URL = https://hooks.slack.com/services/... を追加する。
+ * 未設定でもメール送信は動く（Slack 通知だけスキップされる）。
+ */
+function slackWebhookUrl() {
+  return PropertiesService.getScriptProperties().getProperty('SLACK_WEBHOOK_URL') || '';
+}
+
 var LABELS = {
   name: 'お名前',
   company: '会社名',
@@ -96,6 +107,17 @@ function doPost(e) {
       name: 'B2X コーポレートサイト'
     });
 
+    // Slack 通知は補助的な導線。失敗してもメールは送れているので握りつぶす
+    notifySlack({
+      name: name,
+      company: trim(data.company),
+      title: trim(data.title),
+      email: email,
+      tel: trim(data.tel),
+      typeLabel: typeLabel,
+      message: message
+    });
+
     return json({ ok: true });
   } catch (err) {
     return json({ ok: false, error: '送信処理でエラーが発生しました。' });
@@ -104,7 +126,64 @@ function doPost(e) {
 
 /** 疎通確認用。ブラウザで /exec を開くと状態が見える */
 function doGet() {
-  return json({ ok: true, service: 'b2x-contact-form' });
+  return json({
+    ok: true,
+    service: 'b2x-contact-form',
+    slack: slackWebhookUrl() ? 'configured' : 'not-configured'
+  });
+}
+
+/** Slack の Incoming Webhook へ通知する。設定がなければ何もしない */
+function notifySlack(d) {
+  var url = slackWebhookUrl();
+  if (!url) return;
+
+  var fields = [
+    { type: 'mrkdwn', text: '*お名前*\n' + d.name },
+    { type: 'mrkdwn', text: '*会社名*\n' + (d.company || '（未入力）') },
+    { type: 'mrkdwn', text: '*メール*\n' + d.email },
+    { type: 'mrkdwn', text: '*電話番号*\n' + (d.tel || '（未入力）') },
+    { type: 'mrkdwn', text: '*部署・役職*\n' + (d.title || '（未入力）') },
+    { type: 'mrkdwn', text: '*種別*\n' + d.typeLabel }
+  ];
+
+  var body = {
+    text: 'B2X HP からお問い合わせ: ' + d.name + '様（' + d.typeLabel + '）',
+    blocks: [
+      {
+        type: 'header',
+        text: { type: 'plain_text', text: 'コーポレートサイトへのお問い合わせ' }
+      },
+      { type: 'section', fields: fields },
+      {
+        type: 'section',
+        text: { type: 'mrkdwn', text: '*お問い合わせ内容*\n' + truncate(d.message, 2800) }
+      },
+      {
+        type: 'context',
+        elements: [{
+          type: 'mrkdwn',
+          text: Utilities.formatDate(new Date(), 'Asia/Tokyo', 'yyyy-MM-dd HH:mm') +
+                ' (JST) ・ 返信は ' + MAIL_TO + ' に届いたメールから'
+        }]
+      }
+    ]
+  };
+
+  try {
+    UrlFetchApp.fetch(url, {
+      method: 'post',
+      contentType: 'application/json',
+      payload: JSON.stringify(body),
+      muteHttpExceptions: true
+    });
+  } catch (err) {
+    // 通知失敗はメール送信の成否に影響させない
+  }
+}
+
+function truncate(s, n) {
+  return s.length > n ? s.slice(0, n) + '…（以下省略、メール本文を参照）' : s;
 }
 
 function trim(v) {
