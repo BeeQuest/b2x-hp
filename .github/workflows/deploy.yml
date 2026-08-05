@@ -1,0 +1,49 @@
+name: Deploy to Firebase Hosting
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Workload Identity 連携で GCP に認証するため id-token が必要
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: firebase-hosting-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - id: auth
+        uses: google-github-actions/auth@v2
+        with:
+          project_id: b2x-hp
+          workload_identity_provider: projects/937109370773/locations/global/workloadIdentityPools/github/providers/github-provider
+          service_account: gh-deploy@b2x-hp.iam.gserviceaccount.com
+          token_format: access_token
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Deploy to Firebase Hosting
+        env:
+          ACCESS_TOKEN: ${{ steps.auth.outputs.access_token }}
+        run: python3 scripts/deploy_hosting.py b2x-hp . b2x-hp
+
+      - name: Verify site is serving
+        run: |
+          for url in https://b2x.co.jp/ https://www.b2x.co.jp/ https://b2x-hp.web.app/; do
+            code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 20 "$url")
+            echo "$url -> $code"
+            if [ "$code" != "200" ]; then
+              echo "::error::$url returned $code"
+              exit 1
+            fi
+          done
