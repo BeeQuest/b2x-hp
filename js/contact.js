@@ -84,6 +84,41 @@
     });
   };
 
+  /** 送信ごとに一意な ID。二重送信の判定にサーバ側で使う */
+  const newSubmissionId = () => {
+    if (window.crypto && typeof window.crypto.randomUUID === "function") {
+      return window.crypto.randomUUID();
+    }
+    return Date.now().toString(36) + "-" + Math.random().toString(36).slice(2, 10);
+  };
+
+  /**
+   * 応答が読めなかった場合だけ再送する。
+   * submissionId により、サーバ側で重複はメール送信されない。
+   */
+  const postWithRetry = async (endpoint, payload, attempts) => {
+    let last = { ok: false };
+    for (let i = 0; i < attempts; i++) {
+      try {
+        const res = await fetch(endpoint, {
+          method: "POST",
+          // Apps Script の Web アプリはプリフライトを受け付けないため text/plain で送る
+          headers: { "Content-Type": "text/plain;charset=utf-8" },
+          body: JSON.stringify(payload)
+        });
+        const result = await res.json().catch(() => null);
+        if (res.ok && result && result.ok) return result;
+        // サーバが明示的にエラー内容を返した場合は入力の問題なので再送しない
+        if (result && result.error) return result;
+        last = { ok: false };
+      } catch (err) {
+        last = { ok: false };
+      }
+      if (i < attempts - 1) await new Promise(r => setTimeout(r, 800 * (i + 1)));
+    }
+    return last;
+  };
+
   const submitContactForm = async (form) => {
     const statusEl = $("#form-status", form);
     const button = $("input[type=submit], button[type=submit]", form);
@@ -110,6 +145,12 @@
       if (key !== "agree") payload[key] = value;
     });
 
+    // Apps Script の /exec は 302 で googleusercontent へ飛ぶが、
+    // その応答が JSON にならず読み取れないことがある（実測で数回に1回）。
+    // リトライしても二重送信にならないよう、送信ごとに一意な ID を付ける。
+    // サーバ側は同じ ID を受け取ったら再送せず ok を返す。
+    payload.submissionId = newSubmissionId();
+
     if (button) {
       button.disabled = true;
       button.dataset.label = button.value || button.innerHTML;
@@ -119,15 +160,9 @@
     setStatus("送信しています…", "pending");
 
     try {
-      const res = await fetch(endpoint, {
-        method: "POST",
-        // Apps Script の Web アプリはプリフライトを受け付けないため text/plain で送る
-        headers: { "Content-Type": "text/plain;charset=utf-8" },
-        body: JSON.stringify(payload)
-      });
-      const result = await res.json().catch(() => ({ ok: false }));
+      const result = await postWithRetry(endpoint, payload, 3);
 
-      if (res.ok && result.ok) {
+      if (result.ok) {
         setStatus("お問い合わせを受け付けました。担当者よりご連絡いたします。", "success");
         form.reset();
       } else {

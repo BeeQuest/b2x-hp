@@ -80,6 +80,18 @@ function doPost(e) {
       return json({ ok: false, error: '送信が集中しています。しばらくしてからお試しください。' });
     }
 
+    // /exec は 302 リダイレクト後の応答が読めないことがあり、クライアントが再送する。
+    // 同じ submissionId を受け取ったら、メールを再送せず成功として返す。
+    var sid = trim(data.submissionId);
+    if (sid) {
+      var cache = CacheService.getScriptCache();
+      var key = 'sid_' + sid;
+      if (cache.get(key)) {
+        return json({ ok: true, duplicate: true });
+      }
+      cache.put(key, '1', 600); // 10分間は同じ送信を重複とみなす
+    }
+
     var typeLabel = TYPE_LABELS[data.type] || data.type || '（未選択）';
     var lines = [
       'コーポレートサイトのお問い合わせフォームから送信がありました。',
