@@ -2,12 +2,15 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>よくある質問（FAQ） | 株式会社B2X</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="株式会社B2Xへのよくある質問。BeeQuest・LMS開発・会計教育・AX支援・契約・料金・導入フローに関するご質問をまとめています。">
 <meta name="robots" content="index, follow">
-<meta name="theme-color" content="#1a73e8">
+<meta name="theme-color" content="#ffa200">
 <link rel="canonical" href="https://b2x.co.jp/faq.html">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="favicon.svg">
+<link rel="stylesheet" href="css/style.css">
 
 <script type="application/ld+json">
 {
@@ -19,296 +22,241 @@
   ]
 }
 </script>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="apple-touch-icon" href="favicon.svg">
-<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<a href="#main" class="skip-link">本文へスキップ</a>
+<div id="container">
 
-<div class="topbar" role="complementary" aria-label="ユーティリティリンク">
-  <div class="container topbar-inner">
-    <div class="topbar-left">
-      <a href="faq.html"><i class="fa-regular fa-circle-question" aria-hidden="true"></i> よくある質問</a>
-      <a href="#"><i class="fa-regular fa-file-lines" aria-hidden="true"></i> 資料ダウンロード</a>
-      <a href="contact.html"><i class="fa-regular fa-envelope" aria-hidden="true"></i> お問い合わせ</a>
-    </div>
-    <div class="topbar-right">
-      <a href="#"><i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i> BeeQuestログイン</a>
-      <a href="contact.html" class="topbar-btn">資料請求</a>
-    </div>
-  </div>
-</div>
 
-<header class="header">
-  <div class="container header-inner">
-    <a href="index.html" class="logo" aria-label="株式会社B2X ホーム">
-      <i class="fa-solid fa-cube" aria-hidden="true"></i>
-      <span>B2X</span>
-    </a>
-    <nav class="gnav" id="gnav" aria-label="メイングローバルナビゲーション">
-      <ul>
-        <li><a href="index.html#services">サービス</a></li>
-        <li><a href="index.html#pricing">ご支援パターン</a></li>
-        <li><a href="index.html#cases">導入事例</a></li>
-        <li><a href="index.html#news">ニュース</a></li>
-        <li><a href="company.html">会社概要</a></li>
-        <li><a href="contact.html">お問い合わせ</a></li>
-      </ul>
-    </nav>
-    <div class="header-cta">
-      <a href="https://beequest.app" class="btn btn-beequest" target="_blank" rel="noopener"><i class="fa-solid fa-cube" aria-hidden="true"></i> BeeQuestを見る</a>
-      <a href="contact.html" class="btn btn-primary">資料請求</a>
-    </div>
-    <button class="hamburger" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="gnav">
-      <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
-    </button>
-  </div>
+
+<!--▼▼▼▼▼ここから「ヘッダー」-->
+<header>
+
+<h1 id="logo"><a href="index.html" class="logo-lockup"><img src="images/logo.png" alt="株式会社B2X"><span class="logo-text">株式会社B2X</span></a></h1>
+
+<nav>
+<ul>
+<li><a href="index.html#services">サービス</a>
+	<ul>
+	<li><a href="service-beequest.html">BeeQuest</a></li>
+	<li><a href="service-lms.html">LMS・学習管理システム開発</a></li>
+	<li><a href="service-si.html">受託システム開発 / SI</a></li>
+	<li><a href="service-accounting.html">会計教育コンテンツ</a></li>
+	<li><a href="service-ax.html">AX・教育DX支援</a></li>
+	<li><a href="service-api.html">API・プラグイン開発</a></li>
+	</ul>
+</li>
+<li><a href="index.html#plan">ご支援パターン</a></li>
+<li><a href="faq.html">よくある質問</a></li>
+<li><a href="index.html#flow">導入の流れ</a></li>
+<li><a href="company.html">会社概要</a></li>
+<li><a href="contact.html">お問い合わせ</a></li>
+</ul>
+</nav>
+
 </header>
+<!--▲▲▲▲▲ここまで「ヘッダー」-->
 
-<main id="main">
 
-<section class="page-hero" aria-labelledby="page-title">
-  <div class="container page-hero-inner">
-    <nav class="breadcrumb" aria-label="パンくず">
-      <a href="index.html">ホーム</a>
-      <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
-      <span aria-current="page">よくある質問</span>
-    </nav>
-    <h1 class="page-title" id="page-title">よくある質問</h1>
-    <p class="page-subtitle">お客さまから多くいただくご質問をカテゴリ別にまとめました。解決しない場合はお気軽にお問い合わせください。</p>
-  </div>
+
+<main>
+
+
+<!--サービス全般-->
+<section>
+<h2 class="c">よくある質問<span>FAQ</span></h2>
+<p class="c">お客さまから多くいただくご質問をカテゴリ別にまとめました。解決しない場合はお気軽にお問い合わせください。</p>
+
+<h3>サービス全般について</h3>
+
+<dl class="faq">
+<dt class="openclose">B2Xはどのような会社ですか？</dt>
+<dd>株式会社B2Xは、「システム開発力」「教育設計」「会計実務」の三位一体を強みとする企業です。自社プロダクトの学習プラットフォーム「BeeQuest」を中核に、会計教育・教育DX・AX（Accounting Transformation）支援・LMS開発・受託SI・API/プラグイン開発をワンストップでご提供しています。</dd>
+<dt class="openclose">他のSaaS事業者や研修会社と何が違いますか？</dt>
+<dd>多くの事業者が「教材だけ」「システムだけ」「コンサルだけ」を提供する中、B2Xは教材設計・プラットフォーム開発・業務実装を一気通貫で担える点が最大の違いです。特に会計・バックオフィス領域の実務知見と、自社プロダクトBeeQuestを開発・運用してきた技術基盤を活かし、現場で本当に使われ、業務成果に繋がる仕組みまで設計します。</dd>
+<dt class="openclose">個人でもサービスを利用できますか？</dt>
+<dd>BeeQuestは個人学習にも対応しています。企業契約だけでなく、個人のリスキリング・スキルアップ目的でもご利用いただけます。詳細・お申し込みは <a href="https://beequest.app" target="_blank" rel="noopener">BeeQuest公式サイト</a> をご覧ください。</dd>
+</dl>
 </section>
 
-<section class="section">
-  <div class="container">
 
-    <h2 class="company-section-title">サービス全般について</h2>
-    <ul class="faq-list">
-      <li class="faq-item">
-        <details>
-          <summary class="faq-q">B2Xはどのような会社ですか？</summary>
-          <div class="faq-a">
-            <p>株式会社B2Xは、「システム開発力」「教育設計」「会計実務」の三位一体を強みとする企業です。自社プロダクトの学習プラットフォーム「BeeQuest」を中核に、会計教育・教育DX・AX（Accounting Transformation）支援・LMS開発・受託SI・API/プラグイン開発をワンストップでご提供しています。</p>
-          </div>
-        </details>
-      </li>
-      <li class="faq-item">
-        <details>
-          <summary class="faq-q">他のSaaS事業者や研修会社と何が違いますか？</summary>
-          <div class="faq-a">
-            <p>多くの事業者が「教材だけ」「システムだけ」「コンサルだけ」を提供する中、B2Xは教材設計・プラットフォーム開発・業務実装を一気通貫で担える点が最大の違いです。特に会計・バックオフィス領域の実務知見と、自社プロダクトBeeQuestを開発・運用してきた技術基盤を活かし、現場で本当に使われ、業務成果に繋がる仕組みまで設計します。</p>
-          </div>
-        </details>
-      </li>
-      <li class="faq-item">
-        <details>
-          <summary class="faq-q">個人でもサービスを利用できますか？</summary>
-          <div class="faq-a">
-            <p>BeeQuestは個人学習にも対応しています。企業契約だけでなく、個人のリスキリング・スキルアップ目的でもご利用いただけます。詳細・お申し込みは <a href="https://beequest.app" target="_blank" rel="noopener">BeeQuest公式サイト</a> をご覧ください。</p>
-          </div>
-        </details>
-      </li>
-    </ul>
+<!--BeeQuest-->
+<section class="bg1 bg-pattern1">
+<h3>BeeQuestについて</h3>
 
-    <h2 class="company-section-title">BeeQuestについて</h2>
-    <ul class="faq-list">
-      <li class="faq-item">
-        <details>
-          <summary class="faq-q">無料で試すことはできますか？</summary>
-          <div class="faq-a">
-            <p>はい、BeeQuestには14日間の無料トライアルをご用意しています。クレジットカード登録も不要で、全機能をお試しいただけます。お問い合わせフォームよりご相談ください。</p>
-          </div>
-        </details>
-      </li>
-      <li class="faq-item">
-        <details>
-          <summary class="faq-q">既存のLMSや人事システムと連携できますか？</summary>
-          <div class="faq-a">
-            <p>可能です。SSO（SAML / OAuth2）、SCIMによるユーザープロビジョニング、REST API、Webhookによるイベント連携に対応しており、freee人事労務・SmartHR・Microsoft 365・Google Workspace・Salesforce等と連携実績があります。</p>
-          </div>
-        </details>
-      </li>
-      <li class="faq-item">
-        <details>
-          <summary class="faq-q">独自の研修教材をアップロードできますか？</summary>
-          <div class="faq-a">
-            <p>Business以上のプランで、動画・PDF・スライド・テスト問題・eラーニング標準規格（SCORM / xAPI）に対応した独自教材をアップロード・配信可能です。部署・役職別の学習設計もダッシュボードから設定できます。</p>
-          </div>
-        </details>
-      </li>
-    </ul>
-
-    <h2 class="company-section-title">会計教育・研修について</h2>
-    <ul class="faq-list">
-      <li class="faq-item">
-        <details>
-          <summary class="faq-q">どのような会計分野に対応していますか？</summary>
-          <div class="faq-a">
-            <p>簿記3級〜1級、財務会計、管理会計、IFRS、連結会計、税務、経理実務、経営管理まで幅広く対応しています。実務家監修のカリキュラムをベースに、企業ごとの業種・業務フローに合わせてカスタマイズすることも可能です。</p>
-          </div>
-        </details>
-      </li>
-      <li class="faq-item">
-        <details>
-          <summary class="faq-q">集合研修とeラーニングのどちらに対応していますか？</summary>
-          <div class="faq-a">
-            <p>両方に対応しており、両者を組み合わせたハイブリッド研修の設計が得意です。BeeQuest上でのeラーニング配信・テスト・進捗管理と、対面またはオンライン集合研修を組み合わせ、学習定着率を最大化する設計をご提案します。</p>
-          </div>
-        </details>
-      </li>
-    </ul>
-
-    <h2 class="company-section-title">受託開発・AX支援について</h2>
-    <ul class="faq-list">
-      <li class="faq-item">
-        <details>
-          <summary class="faq-q">受託開発のみの依頼も可能ですか？</summary>
-          <div class="faq-a">
-            <p>もちろん可能です。教育DX・AX支援と組み合わせずに、業務システム・SaaS・API基盤の受託開発単独でもお受けしています。請負・準委任・ラボ型契約の3形態からお選びいただけます。</p>
-          </div>
-        </details>
-      </li>
-      <li class="faq-item">
-        <details>
-          <summary class="faq-q">AX（Accounting Transformation）とは何ですか？</summary>
-          <div class="faq-a">
-            <p>AXとは、会計業務そのものをデジタル技術と業務設計の見直しで再設計する取り組みです。B2XではAXを、単なる会計システム導入ではなく「業務プロセスの棚卸し・再設計 + システム統合 + 経理チームのリスキリング + 効果測定」まで含む一連の変革プロジェクトと位置付け、伴走支援しています。</p>
-          </div>
-        </details>
-      </li>
-    </ul>
-
-    <h2 class="company-section-title">契約・料金・お見積もりについて</h2>
-    <ul class="faq-list">
-      <li class="faq-item">
-        <details>
-          <summary class="faq-q">料金はどのように決まりますか？</summary>
-          <div class="faq-a">
-            <p>BeeQuestはアカウント数と利用プランに基づく月額課金制、受託開発・コンサルティング支援は要件・期間・体制に応じたお見積もりです。まずは無料相談にてご要件をお聞かせください。</p>
-          </div>
-        </details>
-      </li>
-      <li class="faq-item">
-        <details>
-          <summary class="faq-q">見積もりは無料ですか？</summary>
-          <div class="faq-a">
-            <p>はい、初回ヒアリング・お見積もり・ご提案は無料で承っております。お問い合わせフォームより目的・規模感・スケジュールをお知らせください。</p>
-          </div>
-        </details>
-      </li>
-      <li class="faq-item">
-        <details>
-          <summary class="faq-q">導入までの期間はどの程度ですか？</summary>
-          <div class="faq-a">
-            <p>BeeQuestの標準導入は最短2週間、教育DX伴走プランは4〜9ヶ月、全社AX・大規模システム開発は6ヶ月〜が目安です。スピード重視のケースや段階導入にも柔軟に対応しています。</p>
-          </div>
-        </details>
-      </li>
-    </ul>
-
-    <h2 class="company-section-title">セキュリティ・データ取り扱いについて</h2>
-    <ul class="faq-list">
-      <li class="faq-item">
-        <details>
-          <summary class="faq-q">学習データや個人情報はどのように保護されますか？</summary>
-          <div class="faq-a">
-            <p>BeeQuestは国内データセンターで運用し、通信・保存ともに暗号化を行っています。アクセス権限管理・監査ログ・脆弱性対策・定期的なバックアップを実施し、プライバシーポリシーおよび情報セキュリティ方針に基づく運用を徹底しています。</p>
-          </div>
-        </details>
-      </li>
-      <li class="faq-item">
-        <details>
-          <summary class="faq-q">請求書や契約書は電子発行ですか？</summary>
-          <div class="faq-a">
-            <p>電子発行に対応しています。インボイス制度・電子帳簿保存法にも対応した形で、電子契約（クラウドサイン等）・電子請求書をご利用いただけます。</p>
-          </div>
-        </details>
-      </li>
-    </ul>
-
-    <div class="faq-footer">
-      <p>解決しないご質問がある場合は、お気軽にお問い合わせください。</p>
-      <a href="contact.html" class="btn btn-primary btn-lg">お問い合わせはこちら <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-    </div>
-
-  </div>
+<dl class="faq">
+<dt class="openclose">無料で試すことはできますか？</dt>
+<dd>はい、BeeQuestには14日間の無料トライアルをご用意しています。クレジットカード登録も不要で、全機能をお試しいただけます。お問い合わせフォームよりご相談ください。</dd>
+<dt class="openclose">既存のLMSや人事システムと連携できますか？</dt>
+<dd>可能です。SSO（SAML / OAuth2）、SCIMによるユーザープロビジョニング、REST API、Webhookによるイベント連携に対応しており、freee人事労務・SmartHR・Microsoft 365・Google Workspace・Salesforce等と連携実績があります。</dd>
+<dt class="openclose">独自の研修教材をアップロードできますか？</dt>
+<dd>Business以上のプランで、動画・PDF・スライド・テスト問題・eラーニング標準規格（SCORM / xAPI）に対応した独自教材をアップロード・配信可能です。部署・役職別の学習設計もダッシュボードから設定できます。</dd>
+</dl>
 </section>
+
+
+<!--会計教育・研修-->
+<section>
+<h3>会計教育・研修について</h3>
+
+<dl class="faq">
+<dt class="openclose">どのような会計分野に対応していますか？</dt>
+<dd>簿記3級〜1級、財務会計、管理会計、IFRS、連結会計、税務、経理実務、経営管理まで幅広く対応しています。実務家監修のカリキュラムをベースに、企業ごとの業種・業務フローに合わせてカスタマイズすることも可能です。</dd>
+<dt class="openclose">集合研修とeラーニングのどちらに対応していますか？</dt>
+<dd>両方に対応しており、両者を組み合わせたハイブリッド研修の設計が得意です。BeeQuest上でのeラーニング配信・テスト・進捗管理と、対面またはオンライン集合研修を組み合わせ、学習定着率を最大化する設計をご提案します。</dd>
+</dl>
+</section>
+
+
+<!--受託開発・AX支援-->
+<section class="bg2 bg-pattern2">
+<h3>受託開発・AX支援について</h3>
+
+<dl class="faq">
+<dt class="openclose">受託開発のみの依頼も可能ですか？</dt>
+<dd>もちろん可能です。教育DX・AX支援と組み合わせずに、業務システム・SaaS・API基盤の受託開発単独でもお受けしています。請負・準委任・ラボ型契約の3形態からお選びいただけます。</dd>
+<dt class="openclose">AX（Accounting Transformation）とは何ですか？</dt>
+<dd>AXとは、会計業務そのものをデジタル技術と業務設計の見直しで再設計する取り組みです。B2XではAXを、単なる会計システム導入ではなく「業務プロセスの棚卸し・再設計 + システム統合 + 経理チームのリスキリング + 効果測定」まで含む一連の変革プロジェクトと位置付け、伴走支援しています。</dd>
+</dl>
+</section>
+
+
+<!--契約・料金・お見積もり-->
+<section>
+<h3>契約・料金・お見積もりについて</h3>
+
+<dl class="faq">
+<dt class="openclose">料金はどのように決まりますか？</dt>
+<dd>BeeQuestはアカウント数と利用プランに基づく月額課金制、受託開発・コンサルティング支援は要件・期間・体制に応じたお見積もりです。まずは無料相談にてご要件をお聞かせください。</dd>
+<dt class="openclose">見積もりは無料ですか？</dt>
+<dd>はい、初回ヒアリング・お見積もり・ご提案は無料で承っております。お問い合わせフォームより目的・規模感・スケジュールをお知らせください。</dd>
+<dt class="openclose">導入までの期間はどの程度ですか？</dt>
+<dd>BeeQuestの標準導入は最短2週間、教育DX伴走プランは4〜9ヶ月、全社AX・大規模システム開発は6ヶ月〜が目安です。スピード重視のケースや段階導入にも柔軟に対応しています。</dd>
+</dl>
+</section>
+
+
+<!--セキュリティ・データ取り扱い-->
+<section class="bg3 bg-pattern3">
+<h3>セキュリティ・データ取り扱いについて</h3>
+
+<dl class="faq">
+<dt class="openclose">学習データや個人情報はどのように保護されますか？</dt>
+<dd>BeeQuestは国内データセンターで運用し、通信・保存ともに暗号化を行っています。アクセス権限管理・監査ログ・脆弱性対策・定期的なバックアップを実施し、プライバシーポリシーおよび情報セキュリティ方針に基づく運用を徹底しています。</dd>
+<dt class="openclose">請求書や契約書は電子発行ですか？</dt>
+<dd>電子発行に対応しています。インボイス制度・電子帳簿保存法にも対応した形で、電子契約（クラウドサイン等）・電子請求書をご利用いただけます。</dd>
+</dl>
+</section>
+
+
+<!--CTA-->
+<section class="bg-primary-color">
+<h2 class="c">解決しない場合はお問い合わせください</h2>
+<p class="c">解決しないご質問がある場合は、お気軽にお問い合わせください。</p>
+<p class="btn1"><a href="contact.html">お問い合わせはこちら</a></p>
+</section>
+
 
 </main>
 
-<section class="beequest-banner" aria-label="BeeQuestサービスへの導線">
-  <div class="container beequest-banner-inner">
-    <div class="bq-banner-left">
-      <span class="bq-banner-badge"><i class="fa-solid fa-cube" aria-hidden="true"></i> FLAGSHIP</span>
-      <h2>当社の主力サービス<br><span class="accent">BeeQuest</span> を見る</h2>
-      <p>企業研修・個人のリスキリングを支える、B2Xの自社開発プラットフォーム。</p>
-    </div>
-    <div class="bq-banner-right">
-      <a href="https://beequest.app" target="_blank" rel="noopener" class="btn btn-primary btn-lg">BeeQuestサイトへ <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
-      <a href="contact.html" class="btn btn-outline btn-lg">無料で相談する</a>
-    </div>
-  </div>
-</section>
 
-<footer class="footer" role="contentinfo">
-  <div class="container footer-inner">
-    <div class="footer-brand">
-      <a href="index.html" class="logo logo-light" aria-label="株式会社B2X ホーム">
-        <i class="fa-solid fa-cube" aria-hidden="true"></i>
-        <span>B2X</span>
-      </a>
-      <address class="footer-desc">株式会社B2X<br>〒104-0061<br>東京都中央区銀座7丁目13番20号9F<br>法人番号: 8010001263785</address>
-    </div>
-    <div class="footer-cols">
-      <nav class="footer-col" aria-labelledby="footer-services-title">
-        <h2 class="footer-col-title" id="footer-services-title">サービス</h2>
-        <a href="service-beequest.html">BeeQuest</a>
-        <a href="service-lms.html">LMS開発</a>
-        <a href="service-si.html">受託システム開発 / SI</a>
-        <a href="service-accounting.html">会計教育コンテンツ</a>
-        <a href="service-ax.html">AX・教育DX支援</a>
-        <a href="service-api.html">API・プラグイン開発</a>
-      </nav>
-      <nav class="footer-col" aria-labelledby="footer-support-title">
-        <h2 class="footer-col-title" id="footer-support-title">お問い合わせ</h2>
-        <a href="contact.html">資料ダウンロード</a>
-        <a href="contact.html">オンライン相談</a>
-        <a href="faq.html">よくある質問</a>
-        <a href="#">BeeQuestサポート</a>
-      </nav>
-      <nav class="footer-col" aria-labelledby="footer-company-title">
-        <h2 class="footer-col-title" id="footer-company-title">会社情報</h2>
-        <a href="company.html">会社概要</a>
-        <a href="company.html#message">代表メッセージ</a>
-        <a href="#">採用情報</a>
-        <a href="index.html#news">ニュース</a>
-        <a href="contact.html">お問い合わせ</a>
-      </nav>
-      <nav class="footer-col" aria-labelledby="footer-policy-title">
-        <h2 class="footer-col-title" id="footer-policy-title">ポリシー</h2>
-        <a href="#">利用規約</a>
-        <a href="#">プライバシーポリシー</a>
-        <a href="#">特定商取引法</a>
-        <a href="#">情報セキュリティ方針</a>
-      </nav>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <div class="container">
-      <p><small>&copy; 2026 B2X Inc. All Rights Reserved.</small></p>
-    </div>
-  </div>
+
+<!--▼▼▼▼▼ここから「フッター」-->
+<footer>
+
+<div>
+<p class="logo"><a href="index.html" class="logo-lockup"><img src="images/logo.png" alt="株式会社B2X"><span class="logo-text">株式会社B2X</span></a></p>
+<p>〒104-0061<br>
+東京都中央区銀座7丁目13番20号9F<br>
+<a href="mailto:info@b2x.co.jp">info@b2x.co.jp</a></p>
+<small>Copyright&copy; 2026 B2X Inc. All Rights Reserved.</small>
+</div>
+
+<div>
+
+<ul>
+<li><a href="index.html#services">サービス</a></li>
+<li><a href="index.html#plan">ご支援パターン</a></li>
+<li><a href="faq.html">よくある質問</a></li>
+<li><a href="index.html#flow">導入の流れ</a></li>
+<li><a href="company.html">会社概要</a></li>
+<li><a href="contact.html">お問い合わせ</a></li>
+</ul>
+
+<ul>
+<li><a href="service-beequest.html">BeeQuest</a></li>
+<li><a href="service-lms.html">LMS・学習管理システム開発</a></li>
+<li><a href="service-si.html">受託システム開発 / SI</a></li>
+<li><a href="service-accounting.html">会計教育コンテンツ</a></li>
+<li><a href="service-ax.html">AX・教育DX支援</a></li>
+<li><a href="service-api.html">API・プラグイン開発</a></li>
+</ul>
+
+</div>
+
 </footer>
+<!--▲▲▲▲▲ここまで「フッター」-->
 
-<button class="pagetop" type="button" aria-label="ページトップへ戻る"><i class="fa-solid fa-chevron-up" aria-hidden="true"></i></button>
 
-<script src="script.js"></script>
+
+<!--以下の行はテンプレートの著作。削除しないで下さい。-->
+<span class="pr"><a href="https://template-party.com/" target="_blank">《Web Design:Template-Party》</a></span>
+
+
+
+</div>
+<!--/#container-->
+
+
+
+<!--開閉ボタン（ハンバーガーアイコン）-->
+<div id="menubar_hdr">
+<span></span><span></span><span></span>
+</div>
+
+
+
+<!--開閉ブロック-->
+<div id="menubar">
+
+<p class="logo"><img src="images/logo.png" alt="株式会社B2X"></p>
+
+<nav>
+<ul>
+<li><a href="index.html">ホーム</a></li>
+<li><a href="index.html#services">サービス</a>
+	<ul>
+	<li><a href="service-beequest.html">BeeQuest</a></li>
+	<li><a href="service-lms.html">LMS・学習管理システム開発</a></li>
+	<li><a href="service-si.html">受託システム開発 / SI</a></li>
+	<li><a href="service-accounting.html">会計教育コンテンツ</a></li>
+	<li><a href="service-ax.html">AX・教育DX支援</a></li>
+	<li><a href="service-api.html">API・プラグイン開発</a></li>
+	</ul>
+</li>
+<li><a href="index.html#plan">ご支援パターン</a></li>
+<li><a href="faq.html">よくある質問</a></li>
+<li><a href="index.html#flow">導入の流れ</a></li>
+<li><a href="company.html">会社概要</a></li>
+<li><a href="contact.html">お問い合わせ</a></li>
+</ul>
+</nav>
+
+</div>
+<!--/#menubar-->
+
+
+
+<!--jQueryの読み込み-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!--パララックス（inview）-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/protonet-jquery.inview/1.1.2/jquery.inview.min.js"></script>
+<script src="js/jquery.inview_set.js"></script>
+
+<!--このテンプレート専用のスクリプト-->
+<script src="js/main.js"></script>
+
 </body>
 </html>
