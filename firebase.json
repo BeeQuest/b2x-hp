@@ -5,11 +5,27 @@
       "firebase.json",
       "render.yaml",
       "**/.*",
-      "**/node_modules/**"
+      "**/node_modules/**",
+      "docs/**",
+      "scripts/**"
+    ],
+    "redirects": [
+      { "source": "/service-lms", "destination": "/service-si.html", "type": 301 },
+      { "source": "/service-lms.html", "destination": "/service-si.html", "type": 301 },
+      { "source": "/service-api", "destination": "/service-si.html", "type": 301 },
+      { "source": "/service-api.html", "destination": "/service-si.html", "type": 301 },
+      { "source": "/service-accounting", "destination": "/service-beequest.html", "type": 301 },
+      { "source": "/service-accounting.html", "destination": "/service-beequest.html", "type": 301 },
+      { "source": "/service-ax", "destination": "/service-partners.html", "type": 301 },
+      { "source": "/service-ax.html", "destination": "/service-partners.html", "type": 301 }
     ],
     "rewrites": [
       { "source": "/company", "destination": "/company.html" },
-      { "source": "/contact", "destination": "/contact.html" }
+      { "source": "/contact", "destination": "/contact.html" },
+      { "source": "/faq", "destination": "/faq.html" },
+      { "source": "/service-partners", "destination": "/service-partners.html" },
+      { "source": "/service-beequest", "destination": "/service-beequest.html" },
+      { "source": "/service-si", "destination": "/service-si.html" }
     ],
     "headers": [
       {

@@ -1,3 +1,10 @@
 __pycache__/
 *.pyc
 .firebase/
+
+# Local / leftover from prior Eleventy work
+.local-assets/
+_site/
+node_modules/
+firebase-debug.log
+.claude/

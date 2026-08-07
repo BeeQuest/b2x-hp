@@ -23,7 +23,7 @@ API = "https://firebasehosting.googleapis.com/v1beta1"
 
 # アップロード対象から外すもの（サイトの一部ではないファイル）
 IGNORE_NAMES = {"firebase.json", ".firebaserc", "render.yaml", "README.md"}
-IGNORE_DIRS = {".git", ".github", "scripts", "node_modules"}
+IGNORE_DIRS = {".git", ".github", "scripts", "node_modules", "docs"}
 
 # firebase.json の hosting 設定と同じ内容をデプロイ時の config として送る
 CONFIG = {
@@ -37,9 +37,23 @@ CONFIG = {
         },
         {"glob": "**/*.@(css|js)", "headers": {"Cache-Control": "public, max-age=86400"}},
     ],
+    "redirects": [
+        {"glob": "/service-lms", "location": "/service-si.html", "type": 301},
+        {"glob": "/service-lms.html", "location": "/service-si.html", "type": 301},
+        {"glob": "/service-api", "location": "/service-si.html", "type": 301},
+        {"glob": "/service-api.html", "location": "/service-si.html", "type": 301},
+        {"glob": "/service-accounting", "location": "/service-beequest.html", "type": 301},
+        {"glob": "/service-accounting.html", "location": "/service-beequest.html", "type": 301},
+        {"glob": "/service-ax", "location": "/service-partners.html", "type": 301},
+        {"glob": "/service-ax.html", "location": "/service-partners.html", "type": 301},
+    ],
     "rewrites": [
         {"glob": "/company", "path": "/company.html"},
         {"glob": "/contact", "path": "/contact.html"},
+        {"glob": "/faq", "path": "/faq.html"},
+        {"glob": "/service-partners", "path": "/service-partners.html"},
+        {"glob": "/service-beequest", "path": "/service-beequest.html"},
+        {"glob": "/service-si", "path": "/service-si.html"},
     ],
 }
 
