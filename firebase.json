@@ -5,6 +5,7 @@
       "firebase.json",
       "render.yaml",
       "**/.*",
+      "gha-creds-*.json",
       "**/node_modules/**"
     ],
     "rewrites": [

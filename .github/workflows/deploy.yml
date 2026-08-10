@@ -27,6 +27,9 @@ jobs:
           workload_identity_provider: projects/937109370773/locations/global/workloadIdentityPools/github/providers/github-provider
           service_account: gh-deploy@b2x-hp.iam.gserviceaccount.com
           token_format: access_token
+          # 認証ファイルは deploy_hosting.py が使わないうえ、公開ディレクトリ直下に
+          # 生成されて Hosting にアップロードされてしまうため作成しない
+          create_credentials_file: false
 
       - uses: actions/setup-python@v5
         with:
